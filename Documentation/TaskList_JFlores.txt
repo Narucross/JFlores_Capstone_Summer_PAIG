@@ -4,12 +4,14 @@ Things to do in Capstone(date/*-**-***/task/):
 *?% - percentage complete
 
 Week 1	: 7/8	--	7/12
-
-	7/8/2013	*?90	- Get repository ready for capstone.
-	7/9/2013	**		- ^
-	7/9/2013	*		- Initial commit
-							-- AI Sensors
-								* How to read text, how to store, and how to compare texts/words
+	Initial commit
+		-- **Documentation Folder 4:33:39 pm
+			--- Tasklist,summary,proposal
+		
+		-- AI Sensors
+			--- How to read text, how to store, and how to compare texts/words
+			--- Reader, Word-Compass, & Dictionary
+		
 
 Week 2	: 7/13	--	7/19
 Week 3	: 7/20	--	7/26
