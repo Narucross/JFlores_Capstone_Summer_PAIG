@@ -7,10 +7,20 @@ Week 1	: 7/8	--	7/12
 	Initial commit
 		-- **Documentation Folder 4:33:39 pm
 			--- Tasklist,summary,proposal
-		
-		-- AI Sensors
-			--- How to read text, how to store, and how to compare texts/words
-			--- Reader, Word-Compass, & Dictionary
+	-- Template matcher
+		// Pattern algorithm that detects the sentence structure of sentences
+	-- Store deciphered templates
+		// Which to keep, what are placeholders
+	-- Synonym web app
+		// Connect to some library and look up words
+		// Print to console
+	Week 2:
+		Original: UI, show number of personalities, "new"&"Add"&"Select" features, basic responce unit
+		PAIG core systems unit{
+			Selection Enum commands: {New P, Select}
+				Select{Edit, getPsychProfile, AddWords, Search, Chat, }
+					Search{Websites, internal}
+		}
 		
 
 Week 2	: 7/13	--	7/19
