@@ -1,27 +1,39 @@
-Things to do in Capstone(date/*-**-***/task/):
-* - work in progress
-** - complete
-*?% - percentage complete
+Things to do in Capstone:
+^ - work in progress
+$ - complete
+/% - percentage complete
 
 Week 1	: 7/8	--	7/12
 	Initial commit
-		-- **Documentation Folder 4:33:39 pm
+		-- $Documentation Folder 4:33:39 pm
 			--- Tasklist,summary,proposal
-	The first part of Chatbot-type AI is how it reads and breaks up its input.
-	These broken components can later be used as grammer ques for later responces.
-		Input: String,
-		Output1: Breaks up the string into patterns, multiple are printed
-		Output2: Synonyms collected for each word in the string. 
+		^{1%
+		The first part of Chatbot-type AI is how it reads and breaks up its input.
+		These broken components can later be used as grammer ques for later responces.
+			Input: String,
+			Output1: Breaks up the string into patterns, multiple are printed
+			Output2: Synonyms collected for each word in the string. 
 
-		From an implementation standpoint, there should be two programs, 
-		1 that takes the input String, and the another that sends the String to
-		two different processes. One that breaks up the string into patterns that
-		the AI will look out for.
-		And the second one that will try to find English synonyms for the words
-		of the string. 
+			From an implementation standpoint, there should be two programs, 
+			1 that takes the input String, and the another that sends the String to
+			two different processes. One that breaks up the string into patterns that
+			the AI will look out for.
+			And the second one that will try to find English synonyms for the words
+			of the string. 
+		}
 		
-Week 2	: 7/13	--	7/19
-	
+Week 2	: 7/13	--	7/19	^
+	Beginning of the user inteface described in the user stories.
+	Particularly the ability to create multiple AI's, select an AI,
+		Chatting with the AI, 
+		At this point the AI should not give back intelligent responces, it will
+		however take last weeks stuff, and document and store the patterns of 
+		speech used. 
+	As a responce it will probally print out for the user to read, the
+				pattern that it deems most reasonable, or if the USer specified certain
+				words that the AI should be gearing its behavior around, it will
+				show which synonyms in the sentence match its words.
+		
 
 Week 3	: 7/20	--	7/26
 Week 2	: 7/13	--	7/19

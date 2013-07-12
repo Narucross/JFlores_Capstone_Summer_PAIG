@@ -1,14 +1,23 @@
 The artificial intelligence should:
 	Take string inputs.
-	Adopt some of the grammatical mannerisms from the user.
+		
 	Its not machine learning. So I don't intend it to know what 1+1 is.
+	
 	But I do expect it to use different synonyms of words that have been used
 		in previous conversations.
+		
 	The Ai is a chatbox except unlike cleverbot it does not have already
 		Programmed behavior patterns, A goal in the project is that 
 		Behavior of the AI progresses or has notible or sutble difference
 		the more it interacts with the user. 
+		
+	The AI will try to steer its behavior around certain words that the User wants 
+		the Ai to adopt. For instance it will favor sentence structures that
+		include the key words (and their synoymns) in its documentation.
+	If the key words are unspecified it can choose its own keywords, and/or just
+		adopt the grammer mannerisms of the users it is interacting with.
+		
 	The section where I wanted it to be able to traverse websites, is so that
 		the user can present to the AI a large number of text within a short
-		period, rather then manually copy + pasting.
+		period of time , rather then manually copy + pasting.
 		
