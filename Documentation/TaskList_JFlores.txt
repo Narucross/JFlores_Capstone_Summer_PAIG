@@ -7,24 +7,24 @@ Week 1	: 7/8	--	7/12
 	Initial commit
 		-- **Documentation Folder 4:33:39 pm
 			--- Tasklist,summary,proposal
-	-- Template matcher
-		// Pattern algorithm that detects the sentence structure of sentences
-	-- Store deciphered templates
-		// Which to keep, what are placeholders
-	-- Synonym web app
-		// Connect to some library and look up words
-		// Print to console
-	Week 2:
-		Original: UI, show number of personalities, "new"&"Add"&"Select" features, basic responce unit
-		PAIG core systems unit{
-			Selection Enum commands: {New P, Select}
-				Select{Edit, getPsychProfile, AddWords, Search, Chat, }
-					Search{Websites, internal}
-		}
-		
+	The first part of Chatbot-type AI is how it reads and breaks up its input.
+	These broken components can later be used as grammer ques for later responces.
+		Input: String,
+		Output1: Breaks up the string into patterns, multiple are printed
+		Output2: Synonyms collected for each word in the string. 
 
+		From an implementation standpoint, there should be two programs, 
+		1 that takes the input String, and the another that sends the String to
+		two different processes. One that breaks up the string into patterns that
+		the AI will look out for.
+		And the second one that will try to find English synonyms for the words
+		of the string. 
+		
 Week 2	: 7/13	--	7/19
+	
+
 Week 3	: 7/20	--	7/26
+Week 2	: 7/13	--	7/19
 Week 4	: 7/27	--	8/2
 Week 5	: 8/3	--	8/9
 Week 6	: 8/10	--	8/16
