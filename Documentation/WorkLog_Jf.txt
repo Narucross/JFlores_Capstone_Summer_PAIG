@@ -1,0 +1,49 @@
+Worklog. Capstone: 2013
+$--Complete
+*--inprogress
+
+Objective:
+	1.) Use Mallet and send console commands to it
+	2.) Use OpenNLP and send console commands to it
+	3.) Decision Tree Node
+	4.) Decision Tree rotations?
+	
+Create Package POC(proof of concepts)$
+	-- Intended for grammar testing, or NLP open source library testing
+Create Package  NLP Stache$
+Create Package  Model?$
+	-- Create the global AI interface, String_Responce (String Token_grammer)
+	-- Each AI Brain has at least 3 components && is a sub-package in model:
+		Interpreter(defined to a specific grammer), rational, responce
+Create Package  AIHawker$
+	^Hawker is a synonym for vendor, think of this as the frontal face of the application,
+		The Hawker has a lists of personalities and can create them, and despenses them for
+		Conversation when available.
+	Interface for the contract between the hawker and the Personality: HawkToBrainComp
+	
+Console with no character limit$
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

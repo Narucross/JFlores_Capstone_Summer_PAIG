@@ -11,8 +11,9 @@ Week 1	: 7/8	--	7/12
 		The first part of Chatbot-type AI is how it reads and breaks up its input.
 		These broken components can later be used as grammer ques for later responces.
 			Input: String,
-			Output1: Breaks up the string into patterns, multiple are printed
-			Output2: Synonyms collected for each word in the string. 
+			Output1: Breaks up the string into its nouns, adjectives, and verbs.
+			Output2: Will extract from an external service;
+				Synonyms collected for each word in the string. 
 
 			From an implementation standpoint, there should be two programs, 
 			1 that takes the input String, and the another that sends the String to
@@ -36,10 +37,10 @@ Week 2	: 7/13	--	7/19	^
 		
 
 Week 3	: 7/20	--	7/26
-Week 2	: 7/13	--	7/19
 Week 4	: 7/27	--	8/2
 Week 5	: 8/3	--	8/9
 Week 6	: 8/10	--	8/16
 Week 7	: 8/17	--	8/23
 Week 8	: 8/24	--	8/30
 Week 9	: 8/31	--	9/6
+Week 10	: 9/7	--	9/13
