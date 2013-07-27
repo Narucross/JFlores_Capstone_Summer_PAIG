@@ -1,0 +1,91 @@
+{"noun":
+	{
+	"syn":["passion","beloved","dear","dearest","honey","sexual love","erotic love","lovemaking","making love","love life","concupiscence","emotion","eros","loved one","lover","object","physical attraction","score","sex","sex activity","sexual activity","sexual desire","sexual practice"],
+	"ant":["hate"],
+	"usr":["amour"]
+	}
+	,
+"verb":
+	{
+	"syn":["love","enjoy","roll in the hay","make out","make love","sleep with","get laid","have sex","know","do it","be intimate","have intercourse","have it away","have it off","screw","jazz","eff","hump","lie with","bed","have a go at it","bang","get it on","bonk","copulate","couple","like","mate","pair"]
+	,"ant":["hate"]
+	}
+}
+	
+public class BigThesaurusJsonResult{
+	public BigThesaurusJsonResult(){}
+	private results noun;
+	private results verb;
+	
+}
+
+public class results{
+	private String[] syn;
+	private String[] ant;
+}
+
+// ========================================================================================================================
+// Client CXF WebClientAPI implementation
+// ========================================================================================================================
+
+	public void getWord(String wordOf, String formatType){
+		BigThesaurusJSonResult result = 
+			WebClient.create("http://words.bighugelabs.com/api/2/a1b74156ff65faae2811d2e8cc58ac88")
+				.path("{word}/{format}",wordOf,formatType)
+					.get(BigThesaurusJSonResult.class);
+		
+	}
+	
+// ========================================================================================================================
+// Obtained by:  http://words.bighugelabs.com/Word
+// ========================================================================================================================
+<div id="results">
+	<h3>noun</h3>
+	<ul class="words">
+		<li><a href="/news">news</a></li>
+		<li><a href="/intelligence">intelligence</a></li>
+		<li><a href="/tidings">tidings</a></li>
+		<li><a href="/discussion">discussion</a></li>
+		<li><a href="/give-and-take">give-and-take</a></li>
+		<li><a href="/parole">parole</a></li>
+		<li><a href="/word of honor">word of honor</a></li>
+		<li><a href="/Son">Son</a></li>
+		<li><a href="/Word">Word</a></li>
+		<li><a href="/Logos">Logos</a></li>
+		<li><a href="/password">password</a></li>
+		<li><a href="/watchword">watchword</a></li>
+		<li><a href="/countersign">countersign</a></li>
+		<li><a href="/Bible">Bible</a></li>
+		<li><a href="/Christian Bible">Christian Bible</a></li>
+		<li><a href="/Book">Book</a></li>
+		<li><a href="/Good Book">Good Book</a></li>
+		<li><a href="/Holy Scripture">Holy Scripture</a></li>
+		<li><a href="/Holy Writ">Holy Writ</a></li>
+		<li><a href="/Scripture">Scripture</a></li>
+		<li><a href="/Word of God">Word of God</a></li>
+		<li><a href="/arcanum">arcanum</a></li>
+		<li><a href="/computer memory unit">computer memory unit</a></li>
+		<li><a href="/hypostasis">hypostasis</a></li>
+		<li><a href="/hypostasis of Christ">hypostasis of Christ</a></li>
+		<li><a href="/info">info</a></li>
+		<li><a href="/information">information</a></li>
+		<li><a href="/language">language</a></li><li><a href="/language unit">language unit</a></li><li><a href="/linguistic unit">linguistic unit</a></li><li><a href="/oral communication">oral communication</a></li><li><a href="/order">order</a></li><li><a href="/positive identification">positive identification</a></li><li><a href="/promise">promise</a></li><li><a href="/religious text">religious text</a></li><li><a href="/religious writing">religious writing</a></li><li><a href="/sacred text">sacred text</a></li><li><a href="/sacred writing">sacred writing</a></li><li><a href="/secret">secret</a></li><li><a href="/speech">speech</a></li><li><a href="/speech communication">speech communication</a></li><li><a href="/spoken communication">spoken communication</a></li><li><a href="/spoken language">spoken language</a></li><li><a href="/statement">statement</a></li><li><a href="/voice communication">voice communication</a></li></ul>
+	<h3>verb</h3><ul class="words"><li><a href="/give voice">give voice</a></li><li><a href="/formulate">formulate</a></li><li><a href="/phrase">phrase</a></li><li><a href="/articulate">articulate</a></li><li><a href="/evince">evince</a></li><li><a href="/express">express</a></li><li><a href="/show">show</a></li></ul>
+	<h3>sounds kind of like</h3><ul class="words"><li><a href="/war widow">war widow</a></li><li><a href="/waratah">waratah</a></li><li><a href="/ward">ward</a></li><li><a href="/warhead">warhead</a></li><li><a href="/wart">wart</a></li><li><a href="/wartweed">wartweed</a></li><li><a href="/warty">warty</a></li><li><a href="/wayward">wayward</a></li><li><a href="/wear out">wear out</a></li><li><a href="/wearied">wearied</a></li><li><a href="/weird">weird</a></li><li><a href="/weirdie">weirdie</a></li><li><a href="/weirdo">weirdo</a></li><li><a href="/weirdy">weirdy</a></li><li><a href="/wire-haired">wire-haired</a></li><li><a href="/wired">wired</a></li><li><a href="/wordy">wordy</a></li><li><a href="/worried">worried</a></li><li><a href="/worrywart">worrywart</a></li><li><a href="/wort">wort</a></li><li><a href="/worth">worth</a></li><li><a href="/worthy">worthy</a></li><li><a href="/wraith">wraith</a></li><li><a href="/wrath">wrath</a></li><li><a href="/wreath">wreath</a></li><li><a href="/wreathe">wreathe</a></li><li><a href="/wreathed">wreathed</a></li><li><a href="/writ">writ</a></li><li><a href="/write">write</a></li><li><a href="/write out">write out</a></li><li><a href="/writhe">writhe</a></li><li><a href="/writhed">writhed</a></li><li><a href="/wroth">wroth</a></li><li><a href="/wyrd">wyrd</a></li></ul>
+	<h3>rhymes with</h3><ul class="words"><li><a href="/absurd">absurd</a></li><li><a href="/bird">bird</a></li><li><a href="/blurred">blurred</a></li><li><a href="/byrd">byrd</a></li><li><a href="/conferred">conferred</a></li><li><a href="/curd">curd</a></li><li><a href="/deferred">deferred</a></li><li><a href="/gird">gird</a></li><li><a href="/heard">heard</a></li><li><a href="/herd">herd</a></li><li><a href="/interred">interred</a></li><li><a href="/kurd">kurd</a></li><li><a href="/nerd">nerd</a></li><li><a href="/preferred">preferred</a></li><li><a href="/reword">reword</a></li><li><a href="/slurred">slurred</a></li><li><a href="/stirred">stirred</a></li><li><a href="/third">third</a></li><li><a href="/uncured">uncured</a></li><li><a href="/undeterred">undeterred</a></li><li><a href="/unheard">unheard</a></li></ul></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

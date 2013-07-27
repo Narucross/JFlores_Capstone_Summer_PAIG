@@ -21,3 +21,17 @@ The artificial intelligence should:
 		the user can present to the AI a large number of text within a short
 		period of time , rather then manually copy + pasting.
 		
+
+
+3? kinds of Ai so far that could serve as a "reasonable" implementation Model.
+
+	1st Statistical Algo(Any-Lang)Is a robot that doesn't inately understand the language you communicate with it.
+		But instead records the patterns of the words used, and sets a probability of which words go where
+	2nd Relational(English-only): Stores "relationships" between words used in a sentence. Obviously restricted to one language
+		Given a sentence like: "The Ball was red" it will likely store the relationship along the lines of:
+			objectOf("Ball","red"). That way understanding is only nessessary for say queries by the user("What color was the ball")
+				The rest would be purly relational
+	3rd Is basically an extension of Topic-Modeling, where the AI will first separate paragraphs into topics, and "favor"
+		A topic over the others, or specifically look for a topic. 
+			However how will a User interact with it?
+			

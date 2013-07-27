@@ -1,0 +1,63 @@
+Worklog. Capstone: 2013
+$--Complete
+*--inprogress
+
+Create Package POC(proof of concepts)$
+	-- Intended for grammar testing, or NLP open source library testing
+Create Package  NLP Stache$
+Create Package  Model?$
+	-- Create the global AI interface, String_Responce (String Token_grammer)
+	-- Each AI Brain has at least 3 components && is a sub-package in model:
+		Interpreter(defined to a specific grammer), rational, responce
+Create Package  AIHawker$
+	^Hawker is a synonym for vendor, think of this as the frontal face of the application,
+		The Hawker has a lists of personalities and can create them, and despenses them for
+		Conversation when available.
+	Interface for the contract between the hawker and the Personality: HawkToBrainComp
+	
+Console with no character limit$
+
+Note: Make sure you train OpenNLP Models in order for them to be able to process several languages.(Speculative however it doesn't strictly state it can train to any language.)
+	
+// =============================================================================================================================================================================
+// Update since 07/25/2013
+// =============================================================================================================================================================================
+
+AI now has to find things that it likes. Will you as a person who likes what I like, like a website? yes or no?
+or generally how much will you like it?
+		
+	Idea...	
+		Make the AI request synonyms or adjacent words in the format of pairs and a weight.
+			Interface:
+				ArrayList<stuff> getSynons(String refWords);
+				
+			--What this allows is IFFF I want to not include  a thesaurous I can, primarily
+			
+			thesaurus or wikipedia?
+			
+			Will involking the same experience reveal the same kind of personality?
+				No.
+		
+		
+		
+		
+	Idea...
+		Thesaurus expansions could perhaps increase with inclusion of YahooAnswers API... Just a suggestion		
+	
+Thesaurus resource in use:
+	Big Thesaurus by Big Huge Labs
+	http://words.bighugelabs.com/api.php
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
