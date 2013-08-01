@@ -20,7 +20,6 @@ public interface HawkToBrainComp {
     /**
      * Send a conventional grammar into this method and receive a response from the AI Personality
      * @param conventional_Grammar to be determined
-     * @return
      */
     public String requestResponce(String conventional_Grammar);
 }//end of interface

@@ -21,18 +21,22 @@ import java.util.ArrayList;
  */
 public class SpellCheckRestService {
 
+
     private static String SpellCheckURLFormat = "http://service.afterthedeadline.com/checkDocument?key=%s&data=%s";
+
     private static String SpellCheckAPIKey = "PAIGITERATION53e51a5645215ec3ca76cdff6708a605";
     private String testXML = "<results><error><string>lov</string><description>Spelling</description><precontext/><suggestions><option>log</option><option>love</option><option>low</option><option>lot</option><option>lo</option></suggestions><type>spelling</type></error></results>";
 
+    private String testXMLComplete = "<results></results>";
+
+    //TODO
     public String isWordCorrect(String word) {
         String URL = String.format(SpellCheckURLFormat, SpellCheckAPIKey, word);
-        String result = WebClient.create("URL").get(String.class);
-        return result;
+        return WebClient.create(URL).get(String.class);
     }
 
 
-    private Document parseWebResponce(String result) {
+    private Document parseWebResponse(String result) {
         //get the factory
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         Document dom = null;
@@ -46,34 +50,25 @@ public class SpellCheckRestService {
             dom = db.parse(stringedInputStream);
 
 
-        } catch (ParserConfigurationException pce) {
+        } catch (ParserConfigurationException | IOException | SAXException pce) {
             pce.printStackTrace();
-        } catch (SAXException se) {
-            se.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
         }
         return dom;
     }
 
-    public String testingPhase() {
-
-
-        Document testDoc = parseWebResponce(testXML);
+    public String testingPhase(String testCase) {
+        Document testDoc = parseWebResponse(testCase);
         // get root element
         Element entireDoc = testDoc.getDocumentElement();
-
-        //get nodelist of
         ArrayList<SpellCheckError> errors = new ArrayList<>();
+        //get node list of elements
         NodeList list = entireDoc.getElementsByTagName("error");
         if (list != null && list.getLength() > 0) {
             for (int i = 0; i < list.getLength(); i++) {
                 // get da element
                 Element el = (Element) list.item(i);
-
                 SpellCheckError error = parseWebElementsIntoObjects(el);
                 errors.add(error);
-
             }
         } else {
             // return all good
@@ -88,7 +83,7 @@ public class SpellCheckRestService {
         String descriptionErrorType = getTextValue(empEl, "description");
         String type = getTextValue(empEl, "type");
         //TODO
-        String[] suggestions = getMultiples(empEl, "suggestions");
+        String[] suggestions = getArray2ndChildren(empEl, "suggestions");
         error.setDescription(descriptionErrorType);
         error.setType(type);
         error.setString(originalString);
@@ -97,19 +92,17 @@ public class SpellCheckRestService {
     }
 
 
-// ========================================================================================================================
-// creditted to: totheriver.com -- http://www.java-samples.com/showtutorial.php?tutorialid=152
-// ========================================================================================================================
+/*
+========================================================================================================================
+ credit to: totheriver.com -- http://www.java-samples.com/showtutorial.php?tutorialid=152
+========================================================================================================================
+*/
 
     /**
      * I take a xml element and the tag name, look for the tag and get
      * the text content
      * i.e for <employee><name>John</name></employee> xml snippet if
      * the Element points to employee node and tagName is name I will return John
-     *
-     * @param ele
-     * @param tagName
-     * @return
      */
     private String getTextValue(Element ele, String tagName) {
         String textVal = null;
@@ -117,13 +110,19 @@ public class SpellCheckRestService {
         if (nl != null && nl.getLength() > 0) {
             Element currentElement = (Element) nl.item(0);
             textVal = currentElement.getFirstChild().getNodeValue();
-            textVal.toString();
         }
 
         return textVal;
     }
 
-    private String[] getMultiples(Element ele, String hostName) {
+    /**
+     * This is for additional children 1 level deeper : <br/>
+     * [suggestions]<br/>
+     * [option]This gets me!!![/option]<br/>
+     * [option]And ME!!![/option]<br/>
+     * [/suggestions]
+     */
+    private String[] getArray2ndChildren(Element ele, String hostName) {
         ArrayList<String> options = new ArrayList<>(2);
         NodeList nodeList = ele.getElementsByTagName(hostName);
         if (nodeList != null && nodeList.getLength() > 0) {
@@ -131,25 +130,29 @@ public class SpellCheckRestService {
             // we are at "Suggestions"
             NodeList childrenOfSuggestions = currentElement.getChildNodes();
             for (int i = 0; i < childrenOfSuggestions.getLength(); i++) {
-                Element childElement = (Element) childrenOfSuggestions.item(i);
-                options.add(childElement.getFirstChild().getNodeValue());
+                if (childrenOfSuggestions.item(i) instanceof Element) {
+                    Element childElement = (Element) childrenOfSuggestions.item(i);
+                    options.add(childElement.getFirstChild().getNodeValue());
+                }
             }
-//            textVal = currentElement.getFirstChild().getFirstChild().getNodeValue();
-//            textVal.toString();
         }
         return options.toArray(new String[options.size()]);
     }
 
     /**
      * Calls getTextValue and returns a int value
-     *
-     * @param ele
-     * @param tagName
-     * @return
      */
+    @SuppressWarnings("unused")
     private int getIntValue(Element ele, String tagName) {
         //in production application you would catch the exception
         return Integer.parseInt(getTextValue(ele, tagName));
     }
 
+    public String inCorrectTest() {
+        return testingPhase(testXMLComplete);
+    }
+
+    public String correctTest() {
+        return testingPhase(testXML);
+    }
 }//end of class

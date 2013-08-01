@@ -63,8 +63,10 @@ public class WebTests {
 
     private static void testSpellChecker(String tryWord) {
         SpellCheckRestService spellChecker = new SpellCheckRestService();
-//        spellChecker.isWordCorrect(tryWord);
-        String result = spellChecker.testingPhase();
-        System.out.println("Chubacca\n"+result);
+        String firstResult = spellChecker.isWordCorrect(tryWord);
+        String result = spellChecker.correctTest();
+        String result2 = spellChecker.inCorrectTest();
+        String result3 = spellChecker.testingPhase(firstResult);
+        System.out.printf("Chibcha defense\n%s\n\nIf It hadn't been for cotton eye joe, I'd be married long time go\n%s\n\nResult 3 or the word of: %s\n and result\n%s", result, result2, tryWord, result3);
     }
 }//end of class

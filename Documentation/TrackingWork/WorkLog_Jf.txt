@@ -76,7 +76,7 @@ Come With one question answered as a starting point?
 		in this application this tells the AI to develop its personality by implementation of the key words specified
 		thus it will do it's own research on what characteristics are associated with that word.
 			for instance with the example of baseball, courage is a good characteristic, so cowardise would be a bad one.
-		In order to do its own research the firs thing it needs is an access to a resivour of data,
+		In order to do its own research the first thing it needs is an access to a resivour of data,
 			This is where the google search comes in
 		After finding sources of information it needs to cherry pick from the resources, the characteristics it needs
 			Thus it would have to be able, in lay mans terms, read a website, and find accociations with the words it has??
@@ -86,9 +86,37 @@ Come With one question answered as a starting point?
 		What does it need to do?(after the google search)
 			Read a website(s), find those accociations that are important to establishing the identity driven by the keywords.
 	
+		-- Sounds like it does have to be NLP?
 		
+		Read the website >> what if it is not safe? >>  step 2 would be to mapp important words
+			Describe for me? What a personality how do you represent a personality? 
+				In the bac? User's pers[ective? 
+				
+
+				
+Where are we going to go from here?
+
+	"Kind alike amazon works... This person bought this item, and These in conjunciton. Can your program due about the same but without tracking behavior,
+	and instead by knowing pre-remptively what the person knows."
+	
+	Means of getting: the weighted components to our KEY WORDS, are the frequency they appear in: 
+		The Thesaurus, Dictionary, and finally websites "selected" by people.
+	Can our AI tell us if given KEY_WORDS can they give a level of confidence(relevance) to the website?
+	
+	Progression would get this "weighted tree" up and running.
+	In the end we see say a personality with: Baseball++ and Basketball--
+	How would it enjoy that behavior?
+	
+	Where do I go from here:
+		Completed:
+			Thesaurus, Google search,
+		ToDO:
+			website reader, Weighted instrument, Keyword inputs,  vote of confidence.
+			Multiple parts
+			// Techniqual merit
+			
 		
-		
+		WEBPagesz
 		
 		
 		
