@@ -63,6 +63,12 @@ public class RelationShipResult {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return String.format("RsR{\n\tsyn = %s\n\tant = %s\n\tusr = %s\n\tsim = %s\n\trel = %s\n}",
+                Arrays.toString(syn), Arrays.toString(ant), Arrays.toString(usr), Arrays.toString(sim), Arrays.toString(rel));
+    }
+
     //region Getters and Setters
     public String[] getSyn() {
         return syn;

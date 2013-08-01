@@ -17,7 +17,7 @@ public class BigThesQuery {
 
     public static BigThesaurusJSonResult defaultCase;
 
-    {
+    static {
         defaultCase = new BigThesaurusJSonResult();
         defaultCase.setNoun(null);
         defaultCase.setVerb(null);
@@ -27,18 +27,21 @@ public class BigThesQuery {
     /**
      * Gets the word with all its affiliations and relationships from the thesaurus,
      * This is the JSON implementation
+     * Bug: When a word is spelled wrong their thesaurus doesn't return anything, resulting in an input disconnection and subsiquen error
+     *
      * @param wordOf the word we want to find relationships for
-     * @return  An object
+     * @return An object
      */
     public BigThesaurusJSonResult getWordJsonResult(String wordOf) {
         String url = String.format(ThesaurusURL, APIKey);
-        String result =
+        String result = "";
+        result =
                 WebClient.create(url)
                         .path("{word}/{format}", wordOf, "json")
                         .get(String.class);
         BigThesaurusJSonResult toReturnResult = defaultCase;
         Gson son = new Gson();
-        BigThesaurusJSonResult jsonResulted = son.fromJson(result,BigThesaurusJSonResult.class);
+        BigThesaurusJSonResult jsonResulted = son.fromJson(result, BigThesaurusJSonResult.class);
         if (result != null && !(jsonResulted.equals(toReturnResult))) {
             toReturnResult = jsonResulted;
         }

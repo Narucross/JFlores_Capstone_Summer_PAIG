@@ -41,6 +41,15 @@ public class BigThesaurusJSonResult {
         return result;
     }
 
+
+    @Override
+    public String toString() {
+        return "BigThesaurusJSonResult{\n" +
+                "noun = " + noun +
+                ",\nverb = " + verb +
+                "\n}\\\\End of result";
+    }
+
     //region Getters and Setters
     public RelationShipResult getNoun() {
         return noun;
@@ -58,4 +67,5 @@ public class BigThesaurusJSonResult {
         this.verb = verb;
     }
     //endregion
+
 }//End of class

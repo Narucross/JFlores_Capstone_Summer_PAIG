@@ -48,11 +48,44 @@ Thesaurus resource in use:
 	Big Thesaurus by Big Huge Labs
 	http://words.bighugelabs.com/api.php
 	
+Web interaction: 
+	How to pull pages from websites, and need a sync with either google or bing search engines.
+	
+	
+	Thesaurus & Google search:
+	Get webpage...Read it, : relational mapping or something
+	
 		
 		
 		
 		
+	Got to work on professional communication.
+	
+Deliverables:
+	Start delivering solid work: -- earn a green
+	Know where you are going for the next week: how does it fit for the whole project
+
+-- How would it give a status report?
+	
 		
+Come With one question answered as a starting point?
+	--  Explain to me... what you are going to do with the results of that google search?
+		Dewa?
+		Now what?
+		Flow: we get the word from the user, which is looked at by the thesaurus.
+		in this application this tells the AI to develop its personality by implementation of the key words specified
+		thus it will do it's own research on what characteristics are associated with that word.
+			for instance with the example of baseball, courage is a good characteristic, so cowardise would be a bad one.
+		In order to do its own research the firs thing it needs is an access to a resivour of data,
+			This is where the google search comes in
+		After finding sources of information it needs to cherry pick from the resources, the characteristics it needs
+			Thus it would have to be able, in lay mans terms, read a website, and find accociations with the words it has??
+				I could also probally achieve this by continous calls to the dictionary.
+				>> The google custom search we may need to involk better queries to not waste our search limits.
+		
+		What does it need to do?(after the google search)
+			Read a website(s), find those accociations that are important to establishing the identity driven by the keywords.
+	
 		
 		
 		
