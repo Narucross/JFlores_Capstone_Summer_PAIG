@@ -2,6 +2,7 @@ package Tests;
 
 import WebCrawlingResources.BigThesaurusImplement.BigThesQuery;
 import WebCrawlingResources.BigThesaurusImplement.BigThesaurusJSonResult;
+import WebCrawlingResources.SpellChecking.SpellCheckRestService;
 import com.google.gson.Gson;
 
 import java.io.ByteArrayInputStream;
@@ -23,7 +24,8 @@ public class WebTests {
         String query = "Please enter the word you want results for: \n";
         System.out.println(query);
         query = scan.nextLine();
-        getWord(query);
+        testSpellChecker(query);
+//        getWord(query);
 //        getBetterToString();
     }
 
@@ -57,5 +59,12 @@ public class WebTests {
     private static void getBetterToString() {
         BigThesaurusJSonResult loveResult = getBigThesaurusJSonResultForLove();
         System.out.println(loveResult);
+    }
+
+    private static void testSpellChecker(String tryWord) {
+        SpellCheckRestService spellChecker = new SpellCheckRestService();
+//        spellChecker.isWordCorrect(tryWord);
+        String result = spellChecker.testingPhase();
+        System.out.println("Chubacca\n"+result);
     }
 }//end of class
