@@ -119,6 +119,10 @@ Where are we going to go from here?
 		WEBPagesz
 		
 		
-		
+Things to do:
+	Test spellcheck to see if it returns good suggestions in string[] format
+	Google custom search implement finish (try to find a way to be more selective of blogs/heavy digested forums)
+	Start reading pages off the custom search, 
+	weight instrument, and status reports
 		
 		
