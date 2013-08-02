@@ -27,7 +27,7 @@ public class BigThesQuery {
     /**
      * Gets the word with all its affiliations and relationships from the thesaurus,
      * This is the JSON implementation
-     * Bug: When a word is spelled wrong their thesaurus doesn't return anything, resulting in an input disconnection and subsiquen error
+     * During implementation PLEASE make sure that the word is spelled correctly, otherwise this will result in a  javax.ws.rs.NotFoundException
      *
      * @param wordOf the word we want to find relationships for
      * @return An object

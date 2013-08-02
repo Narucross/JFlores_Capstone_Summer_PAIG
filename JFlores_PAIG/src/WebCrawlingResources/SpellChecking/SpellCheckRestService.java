@@ -29,10 +29,34 @@ public class SpellCheckRestService {
 
     private String testXMLComplete = "<results></results>";
 
-    //TODO
     public String isWordCorrect(String word) {
         String URL = String.format(SpellCheckURLFormat, SpellCheckAPIKey, word);
         return WebClient.create(URL).get(String.class);
+    }
+
+    /**
+     * Returns suggestions for error's words,
+     * Will return an empty String[] if there is nothing.
+     */
+    public String[] isWordCorrectIfNotReturnSuggestions(String word) {
+        //TODO
+        String URL = String.format(SpellCheckURLFormat, SpellCheckAPIKey, word);
+        String result = WebClient.create(URL).get(String.class);
+        ArrayList<SpellCheckError> errors = getErrors(result);
+        ArrayList<String> returnedResults = new ArrayList<>(1);
+        if (!errors.isEmpty()) {
+            for (SpellCheckError error : errors) {
+                if (error.getType().equals("spelling")) {
+                    String[] currentSuggestions = error.getSuggestions();
+                    if (currentSuggestions != null && currentSuggestions.length > 0) {
+                        for (String suggest : currentSuggestions) {
+                            returnedResults.add(suggest);
+                        }
+                    }
+                }
+            }
+        }
+        return returnedResults.toArray(new String[returnedResults.size()]);
     }
 
 
@@ -56,7 +80,7 @@ public class SpellCheckRestService {
         return dom;
     }
 
-    public String testingPhase(String testCase) {
+    public ArrayList<SpellCheckError> getErrors(String testCase) {
         Document testDoc = parseWebResponse(testCase);
         // get root element
         Element entireDoc = testDoc.getDocumentElement();
@@ -70,10 +94,12 @@ public class SpellCheckRestService {
                 SpellCheckError error = parseWebElementsIntoObjects(el);
                 errors.add(error);
             }
-        } else {
-            // return all good
         }
-        return errors.toString();
+        return errors;
+    }
+
+    public String testingPhase(String testCase) {
+        return getErrors(testCase).toString();
     }
 
 

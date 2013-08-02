@@ -25,7 +25,7 @@ public class WebTests {
         System.out.println(query);
         query = scan.nextLine();
         testSpellChecker(query);
-//        getWord(query);
+        getWord(query);
 //        getBetterToString();
     }
 
