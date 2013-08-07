@@ -1,0 +1,25 @@
+Thesaurus API's
+Big Huge Thesaurus: 10,000K limit
+	REST Service endpoint:	    http://words.bighugelabs.com/api
+	http://www.programmableweb.com/api/big-huge-thesaurus
+	http://blog.programmableweb.com/2008/09/04/big-huge-thesaurus-api-access-145000-words-and-phrases/
+	Example on how to use it:
+		http://words.bighugelabs.com/api/2/president
+		Results in:
+			“President of the United States,” “Chief Executive,” “chairperson,” “head of state,” etc.
+		function 1 means: The Version 1 API returns a list of related words and phrases.
+		function 2 means: The richer Version 2 API provides the part of speech (noun, verb, adjective, etc.), 
+			and categorizes the relationship between each returned word or phrase and the search word. 
+			The relationship types are synonym, antonym, related term, similar term, and user suggestions. 
+	API Home: //GO here for quick examples,
+		http://words.bighugelabs.com/api.php
+WordNet
+	If all else fails, go back to the source but most likely Big Huge Thesaurus should be enough:
+	http://wordnet.princeton.edu/
+	
+Wikipedia:
+	API Home: http://www.mediawiki.org/wiki/API
+	Service Endpoint: http://en.wikipedia.org/w/api.php
+	
+EclipseZone:
+http://www.eclipsezone.com/eclipse/forums/t11911.html

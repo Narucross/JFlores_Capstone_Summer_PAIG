@@ -1,0 +1,13 @@
+GET https://www.googleapis.com/customsearch/v1?
+String keyFormat = "key=%s";
+&
+String customSearchFormat = "cx=%s";
+&
+String queryFormat = "q=%s";
+&
+String resultJsonFormat = "alt=json";
+
+
+https://www.googleapis.com/customsearch/v1?{parameters}
+APIKey = "AIzaSyDE72spoHdNxzJG9pZkBnhjAxvtTr3fHBQ";
+CustomSearchCX = "012247252479130476325:iifrxrgqhmc";
