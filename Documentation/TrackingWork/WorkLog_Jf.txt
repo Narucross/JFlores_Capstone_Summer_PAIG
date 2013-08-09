@@ -114,15 +114,41 @@ Where are we going to go from here?
 			website reader, Weighted instrument, Keyword inputs,  vote of confidence.
 			Multiple parts
 			// Techniqual merit
-			
-		
 		WEBPagesz
 		
 		
-Things to do:
-	Test spellcheck to see if it returns good suggestions in string[] format
-	Google custom search implement finish (try to find a way to be more selective of blogs/heavy digested forums)
-	Start reading pages off the custom search, 
-	weight instrument, and status reports
+Things to do(August 1st-August 7th)$:
+	Test spellcheck to see if it returns good suggestions in string[] format$
+	Google custom search implement finish (try to find a way to be more selective of blogs/heavy digested forums)$
+	Start reading pages off the custom search, $
+	weight instrument$, and status reports
+	
+//// ===================================================================================================================
+//// (August 8th 2013) Week 6 
+//// ===================================================================================================================		
+		
+Before consuming the frequency data, josh will have a plan that makes sense of the frequencies
+	Status reports : 
+	How dislikes will affect the likes results thing a ma gig
+	Check phone logs
+
+Week Plan:	
+	That is basically all I can think of for today, 
+	my mind wanders towards creating some sort of algorithm that the personalities
+	follow in order to determine if a said website is likeable. 
+	{
+		That said I think this is where certain personalities can differ
+		Like some act Benign towards websites, choosing to like a website
+			but not adjusting its weights 
+	}
+	Advancing Frequency Counter{
+		Get rid of "Useless" words like "the", "and", "then" 
+			
+		Consideration: different conjucations of the same word{"flowers" and "flower" are just counted as "flower"}
 		
 		
+	}
+	Personality{
+		Add how the weights will be effected by "negative" keywords or dislikes
+		
+	}

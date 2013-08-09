@@ -1,31 +1,32 @@
 package AITypes.Personalities.FrequencyPersonPackage;
 
 /**
+ * A regular databeam that is basically a c# couplet of: String,short
  * User: Jflores
  * Date: 8/7/13
  * Time: 3:56 PM
  */
 public class StringIntPairBinding implements Comparable<StringIntPairBinding> {
     private String wordOf;
-    private short occurance;
+    private short occurrence;
 
     public StringIntPairBinding() {
         wordOf = "";
-        occurance = 0;
+        occurrence = 1;
     }
 
     public StringIntPairBinding(String word) {
         setWordOf(word);
-        setOccurance((short) 0);
+        setOccurrence((short) 0);
     }
 
     public StringIntPairBinding(String word, short value) {
         setWordOf(word);
-        setOccurance(value);
+        setOccurrence(value);
     }
 
     public void incrementValue() {
-        occurance++;
+        this.occurrence++;
     }
 
     @Override
@@ -41,11 +42,38 @@ public class StringIntPairBinding implements Comparable<StringIntPairBinding> {
         this.wordOf = wordOf;
     }
 
-    public short getOccurance() {
-        return occurance;
+    public short getOccurrence() {
+        return occurrence;
     }
 
-    public void setOccurance(short occurance) {
-        this.occurance = occurance;
+    public void setOccurrence(short occurrence) {
+        this.occurrence = occurrence;
+    }
+
+    @Override
+    public String toString() {
+        return "StringIntPairBinding{" +
+                "wordOf='" + wordOf + '\'' +
+                ", occurrence=" + occurrence +
+                "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        StringIntPairBinding that = (StringIntPairBinding) o;
+
+        if (!wordOf.equalsIgnoreCase(that.wordOf)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = wordOf.hashCode();
+        result = 31 * result + (int) occurrence;
+        return result;
     }
 }//end of class

@@ -15,6 +15,7 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,19 +26,16 @@ import java.util.Scanner;
  */
 public class QueryCustomSearch {
 
-    public static void main(String[] args) {
-
-        QueryCustomSearch doc = new QueryCustomSearch();
-        System.out.println("Starting test now:\n\n");
-        doc.test();
-    }
-
-    public void test() {
+    /**
+     * Create a request for the method "cse.list". This request holds the parameters needed by the the customsearch server.
+     * @param Query May want to write this in the format of Google custom search, extras
+     * @return a result of Google.customSearch Result API
+     */
+    public List<Result> getResultsFromQueryString(String Query) {
         String APIKey = "AIzaSyDE72spoHdNxzJG9pZkBnhjAxvtTr3fHBQ";
         String CustomSearchCX = "012247252479130476325:iifrxrgqhmc";
-        String Query = "flowers";
+        List<Result> items = null;
         try {
-
             Customsearch customsearch
                     = new Customsearch(new NetHttpTransport(), new JacksonFactory(), null);
             com.google.api.services.customsearch.Customsearch.Cse.List list =
@@ -45,20 +43,89 @@ public class QueryCustomSearch {
             list.setKey(APIKey);
             list.setCx(CustomSearchCX);
             Search results = list.execute();
-
-            List<Result> items = results.getItems();
+            items = results.getItems();
             int i = 1;
             for (Result result : items) {
                 System.out.println("" + (i++) + "Title:" + result.getHtmlTitle() + "\n\tLink:" + result.getLink());
             }
-            System.out.println("======= Now to test the links and print bodies =======\n\n");
-
-            readLinks(items);
+            // System.out.print("======= Now to getResults the links and print bodies =======\n\n");    readLinks(items);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return items;
     }
 
+    /**
+     * Test method for the getResultsFromQueryString () above
+     */
+    public List<Result> getResults() {
+        String Query = "flowers";
+        String APIKey = "AIzaSyDE72spoHdNxzJG9pZkBnhjAxvtTr3fHBQ";
+        String CustomSearchCX = "012247252479130476325:iifrxrgqhmc";
+        List<Result> items = null;
+        try {
+            Customsearch customsearch
+                    = new Customsearch(new NetHttpTransport(), new JacksonFactory(), null);
+            com.google.api.services.customsearch.Customsearch.Cse.List list =
+                    customsearch.cse().list(Query);
+            list.setKey(APIKey);
+            list.setCx(CustomSearchCX);
+            Search results = list.execute();
+            items = results.getItems();
+            int i = 1;
+            for (Result result : items) {
+                System.out.println("" + (i++) + "Title:" + result.getHtmlTitle() + "\n\tLink:" + result.getLink());
+            }
+            // System.out.print("======= Now to getResults the links and print bodies =======\n\n");    readLinks(items);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+    /**
+     * Retrieves the pages usually 10 as strings from google Results
+     * In addition we use JSoap to remove html,css and jquery tags
+     *
+     * @param items a list of google custom search Result items
+     */
+    public ArrayList<String> getHtmlFreeFromResults(List<Result> items) {
+        ArrayList<String> builders = new ArrayList<>(items.size());
+        for (Result result : items) {
+            String currentResultsLink = result.getLink();
+            try {
+                URL url = new URL(currentResultsLink);
+                URLConnection con = url.openConnection();
+                InputStream in = con.getInputStream();
+                StringBuilder responceInString = buildFromInputStream(in);
+                String pageHtmlFree = htmlToText(responceInString.toString());
+                builders.add(pageHtmlFree);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return builders;
+    }
+
+    public String htmlToText(String html) {
+        return Jsoup.parse(html).text();
+    }
+
+    public StringBuilder buildFromInputStream(InputStream inputStream) throws IOException {
+        String line;
+        StringBuilder builder = new StringBuilder();
+        BufferedReader buffReader = new BufferedReader(new InputStreamReader(inputStream));
+        while ((line = buffReader.readLine()) != null) {
+            builder.append(line);
+        }
+        return builder;
+
+    }
+
+
+    /**
+     * A test method predicessor to "getHtmlFreeFromResults" method
+     */
     public void readLinks(List<Result> items) {
         Scanner scan = new Scanner(System.in);
         for (Result result : items) {
@@ -84,21 +151,6 @@ public class QueryCustomSearch {
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public String htmlToText(String html) {
-        return Jsoup.parse(html).text();
-    }
-
-    public StringBuilder buildFromInputStream(InputStream inputStream) throws IOException {
-        String line;
-        StringBuilder builder = new StringBuilder();
-        BufferedReader buffReader = new BufferedReader(new InputStreamReader(inputStream));
-        while ((line = buffReader.readLine()) != null) {
-            builder.append(line);
-        }
-        return builder;
-
     }
 
 }//end of class
