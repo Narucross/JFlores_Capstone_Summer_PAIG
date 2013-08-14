@@ -8,16 +8,14 @@ package AITypes.Personalities.FrequencyPersonPackage;
  */
 public class StringIntPairBinding implements Comparable<StringIntPairBinding> {
     private String wordOf;
-    private short occurrence;
+    private short occurrence = 00;
 
     public StringIntPairBinding() {
         wordOf = "";
-        occurrence = 1;
     }
 
     public StringIntPairBinding(String word) {
         setWordOf(word);
-        setOccurrence((short) 0);
     }
 
     public StringIntPairBinding(String word, short value) {

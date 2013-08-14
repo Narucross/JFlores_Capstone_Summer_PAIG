@@ -146,9 +146,8 @@ Week Plan:
 			
 		Consideration: different conjucations of the same word{"flowers" and "flower" are just counted as "flower"}
 		
-		
+		Remove punctuations marks {'Apparently.','Apparently'}$
 	}
 	Personality{
 		Add how the weights will be effected by "negative" keywords or dislikes
-		
 	}

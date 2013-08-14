@@ -106,6 +106,7 @@ public class WebTests {
             Scanner scan = new Scanner(s);
             while (scan.hasNext()) {
                 String currentWord = scan.next();
+                currentWord= currentWord.replaceAll("\\W","");
                 if (!(currentWord.equals("") || currentWord.equals(" "))) {
                     personality.addWord(currentWord);
                 }
