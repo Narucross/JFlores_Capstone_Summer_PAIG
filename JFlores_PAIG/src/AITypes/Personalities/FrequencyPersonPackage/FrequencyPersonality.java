@@ -64,7 +64,6 @@ public class FrequencyPersonality extends WeightedInstrument {
         return value;
     }
 
-
     private int getCharAsNum(char a) {
         char x = Character.toLowerCase(a);
         return x - 97;

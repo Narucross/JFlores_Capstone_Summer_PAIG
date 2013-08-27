@@ -1,17 +1,15 @@
 package WebCrawlingResources.GoogleSearchImpl;
 
+import WebCrawlingResources.WebSurfing.BasicWebExtractor;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.customsearch.Customsearch;
 import com.google.api.services.customsearch.model.Result;
 import com.google.api.services.customsearch.model.Search;
-import org.jsoup.Jsoup;
 
 import java.awt.*;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -24,10 +22,13 @@ import java.util.Scanner;
  * Date: 8/7/13
  * Time: 7:53 AM
  */
-public class QueryCustomSearch {
+public class QueryCustomSearch extends BasicWebExtractor {
+
+    private final BasicWebExtractor basicWebExtractor = new BasicWebExtractor();
 
     /**
-     * Create a request for the method "cse.list". This request holds the parameters needed by the the customsearch server.
+     * Create a request for the method "cse.list". This request holds the parameters needed by the the custom-search server.
+     *
      * @param Query May want to write this in the format of Google custom search, extras
      * @return a result of Google.customSearch Result API
      */
@@ -48,7 +49,7 @@ public class QueryCustomSearch {
             for (Result result : items) {
                 System.out.println("" + (i++) + "Title:" + result.getHtmlTitle() + "\n\tLink:" + result.getLink());
             }
-            // System.out.print("======= Now to getResults the links and print bodies =======\n\n");    readLinks(items);
+            // System.out.print("======= Now to testGetFlowerResults the links and print bodies =======\n\n");    readLinks(items);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -56,9 +57,61 @@ public class QueryCustomSearch {
     }
 
     /**
+     * Retrieves the pages usually 10 as strings from google Results
+     * In addition we use JSoap to remove html,css and jquery tags
+     *
+     * @param items a list of google custom search Result items
+     */
+    public ArrayList<String> getHtmlFreeFromResults(List<Result> items) {
+        ArrayList<String> builders = new ArrayList<>(items.size());
+        for (Result result : items) {
+            String currentResultsLink = result.getLink();
+            String pageContent = basicWebExtractor.getPageContentFromLink(currentResultsLink);
+            if (!errorStringInHex.equals(pageContent)) {
+                builders.add(pageContent);
+            }
+        }
+        return builders;
+    }
+
+    /**
+     * A test method predecessor to "getHtmlFreeFromResults" method
+     */
+    public void Test_ReadLinks_And_Bodies(List<Result> items) {
+        Scanner scan = new Scanner(System.in);
+        for (Result result : items) {
+            String currentResultsLink = result.getLink();
+            try {
+                URL url = new URL(currentResultsLink);
+                URLConnection con = url.openConnection();
+                InputStream in = con.getInputStream();
+                StringBuilder responceInString = basicWebExtractor.buildFromInputStream(in);
+                String pageHtmlFree = basicWebExtractor.htmlToText(responceInString.toString());
+                System.out.println("The Magic of the body:\n\n" + responceInString.toString() + "\n\n");
+                System.out.println("The Body without HTML\n\n" + pageHtmlFree + "\n\n");
+                System.out.println("\nPress enter for the next link:\n\n");
+                scan.nextLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Opening browser");
+        try {
+            URL url = new URL(items.get(0).getLink());
+            Desktop.getDesktop().browse(url.toURI());
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
+    //======= Test-Methods =======\\
+    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
+
+    /**
      * Test method for the getResultsFromQueryString () above
      */
-    public List<Result> getResults() {
+    public List<Result> testGetFlowerResults() {
         String Query = "flowers";
         String APIKey = "AIzaSyDE72spoHdNxzJG9pZkBnhjAxvtTr3fHBQ";
         String CustomSearchCX = "012247252479130476325:iifrxrgqhmc";
@@ -76,81 +129,16 @@ public class QueryCustomSearch {
             for (Result result : items) {
                 System.out.println("" + (i++) + "Title:" + result.getHtmlTitle() + "\n\tLink:" + result.getLink());
             }
-            // System.out.print("======= Now to getResults the links and print bodies =======\n\n");    readLinks(items);
+            // System.out.print("======= Now to testGetFlowerResults the links and print bodies =======\n\n");    readLinks(items);
         } catch (IOException e) {
             e.printStackTrace();
         }
         return items;
     }
 
-    /**
-     * Retrieves the pages usually 10 as strings from google Results
-     * In addition we use JSoap to remove html,css and jquery tags
-     *
-     * @param items a list of google custom search Result items
-     */
-    public ArrayList<String> getHtmlFreeFromResults(List<Result> items) {
-        ArrayList<String> builders = new ArrayList<>(items.size());
-        for (Result result : items) {
-            String currentResultsLink = result.getLink();
-            try {
-                URL url = new URL(currentResultsLink);
-                URLConnection con = url.openConnection();
-                InputStream in = con.getInputStream();
-                StringBuilder responceInString = buildFromInputStream(in);
-                String pageHtmlFree = htmlToText(responceInString.toString());
-                builders.add(pageHtmlFree);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return builders;
-    }
 
-    public String htmlToText(String html) {
-        return Jsoup.parse(html).text();
-    }
-
-    public StringBuilder buildFromInputStream(InputStream inputStream) throws IOException {
-        String line;
-        StringBuilder builder = new StringBuilder();
-        BufferedReader buffReader = new BufferedReader(new InputStreamReader(inputStream));
-        while ((line = buffReader.readLine()) != null) {
-            builder.append(line);
-        }
-        return builder;
-
-    }
-
-
-    /**
-     * A test method predicessor to "getHtmlFreeFromResults" method
-     */
-    public void readLinks(List<Result> items) {
-        Scanner scan = new Scanner(System.in);
-        for (Result result : items) {
-            String currentResultsLink = result.getLink();
-            try {
-                URL url = new URL(currentResultsLink);
-                URLConnection con = url.openConnection();
-                InputStream in = con.getInputStream();
-                StringBuilder responceInString = buildFromInputStream(in);
-                String pageHtmlFree = htmlToText(responceInString.toString());
-                System.out.println("The Magic of the body:\n\n" + responceInString.toString() + "\n\n");
-                System.out.println("The Body without HTML\n\n" + pageHtmlFree + "\n\n");
-                System.out.println("\nPress enter for the next link:\n\n");
-                scan.nextLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println("Opening browser");
-        try {
-            URL url = new URL(items.get(0).getLink());
-            Desktop.getDesktop().browse(url.toURI());
-        } catch (URISyntaxException | IOException e) {
-            e.printStackTrace();
-        }
-    }
+    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
+    //======= End of Test-Methods =======\\
+    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
 
 }//end of class

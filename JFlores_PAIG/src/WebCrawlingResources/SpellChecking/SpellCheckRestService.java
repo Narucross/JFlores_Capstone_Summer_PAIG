@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 /**
  * A spell checking Rest service consumer
+ * To use this class, call the get errors method, if the array is empty good for you
  * User: jflores
  * Date: 8/1/13
  * Time: 11:02 AM

@@ -151,3 +151,51 @@ Week Plan:
 	Personality{
 		Add how the weights will be effected by "negative" keywords or dislikes
 	}
+
+What I can try is to get the chat stuff working cause I now know enough implementation paradyms that I could get it working...
+//// ===================================================================================================================
+Project succes:
+	- No, The direction has changed from a talk client to a website confirmer or guide
+	- No
+User Stories
+	11 total stories: 1 : 11
+// Week 7
+//// ===================================================================================================================
+Characteristics to look for, for next week:
+Amazon duplicate client:
+	Create a status report based off the word count of the website, 
+		In a sense will a person who has defined the current keywords like a certain website should or should it not be
+			relevant to the cause.
+			// Algothorithm that determines if a mapped personality would prefer a website, in sense we can start with word count.
+				And then continue to do other stuff, we can explore with as much techniqual merit as possible here
+	
+True Chat personality
+	Although discouraged(KTIN) he is also fine with either a working chat interface, 
+		What he is expecting is along the lines that the personality is colored with ideas taken from webpages,
+		So in a sense template matching is not an issue, we can relegate to certain senteces.
+		Chatbot{
+			Basic speech, and recognition.
+			basicSpeech{
+				
+			}
+			Recognition{
+				forcusing on what is signifigant, some words detail action on our part like in questions.
+					where some words are simply factual, which have no answer.
+			}
+		}
+		
+May have to try something new instead of Lemmanizations/stemmers, because they greatly fault results
+	if it is not for statistical purposes
+	One option {
+		Is to Take every word and format it to a sentence of type structure
+		this way when we look at a word the program can get a sense for when that word is used in
+		without knowing anything about it. So this turns from NLP to memory mapping
+		We will need some way to search for "behaviors" in order get fastish word choices.
+	}
+	
+Build a Negative retrieval frequency syncro:
+-- Show the correlation between a mapped webpage and frequency
+// Show 2 pages one that the personsalitry shouldn't like..
+Take that mapper and apply it to the personality
+
+

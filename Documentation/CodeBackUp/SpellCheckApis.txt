@@ -1,0 +1,46 @@
+Spell checking applications:
+After the deadline:
+
+Credit:
+Mudge, Raphael S. (2009) After the Deadline – Language Checking Technology. Automattic. http://open.afterthedeadline.com. 
+
+http://service.afterthedeadline.com/
+
+Example shot
+http://service.afterthedeadline.com/checkDocument?key=%22PAIGITERATION53e51a5645215ec3ca76cdff6708a605%22&data=%22happines%22
+
+API id: PAIGITERATION
+UniqueID:  	http://jthimanpost.blogspot.com/  >>hashed
+	Haval 	53e51a5645215ec3ca76cdff6708a605
+
+	PAIGITERATION53e51a5645215ec3ca76cdff6708a605
+
+String SpellCheckAPIKey = "PAIGITERATION53e51a5645215ec3ca76cdff6708a605";
+String SpellCheckURLFormat = "http://service.afterthedeadline.com/checkDocument?key=%s&data=%s";
+http://service.afterthedeadline.com/checkDocument?key=PAIGITERATION53e51a5645215ec3ca76cdff6708a605&data=
+
+String url = String.format(SpellCheckURLFormat, SpellCheckAPIKey, wordOf);
+
+String result = WebClient.create(url).get(String.class);
+
+Typical Result:
+<results>
+  <error>
+    <string>to be</string>
+    <description>Passive voice</description>
+    <precontext>want</precontext>
+    <type>grammar</type>
+    <url>http://service.afterthedeadline.com/info.slp?text=to+be</url>
+  </error>
+  <error>
+    <string>wether</string>
+    <description>Did you mean...</description>
+    <precontext>determine</precontext>
+    <suggestions>
+        <option>whether</option>
+        <option>weather</option>
+    </suggestions>
+    <type>spelling</type>
+    <url>http://service.afterthedeadline.com/info.slp?text=wether</url>
+  </error>
+</results>

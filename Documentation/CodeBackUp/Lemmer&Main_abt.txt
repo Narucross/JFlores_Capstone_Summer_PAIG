@@ -1,0 +1,69 @@
+////////////////////////////////////////////////////////////////////////////
+// Main
+////////////////////////////////////////////////////////////////////////////
+
+        WebTests tests = new WebTests();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter the word to query for, has to be spelled correctly");
+        String s = scan.nextLine();
+        tests.testNewLemmaWithFrequency(s);
+////////////////////////////////////////////////////////////////////////////
+// End Main
+////////////////////////////////////////////////////////////////////////////
+ 
+
+ public void testNewLemmaWithFrequency(String whatEverQuery) {
+        QueryCustomSearch doc = new QueryCustomSearch();
+        System.out.println("Starting test now:\n\n");
+        List<Result> items = new ArrayList<>(10);
+        /*List<Result> items = doc.getResultsFromQueryString(whatEverQuery);*/
+        //Two "threads" one to get the results and parse out html free,
+        WebPageRetrievalThread firstThread = new WebPageRetrievalThread(whatEverQuery, doc, items);
+        firstThread.start();
+        BasicStandforNLPTest standforNLPTest = new BasicStandforNLPTest();
+        StanfordCoreNLP pipeline = standforNLPTest.setUpPipeLine();
+
+        // Returns every page as a chuck of string
+        ArrayList<String> pagesHtmlFree = doc.getHtmlFreeFromResults(items);
+
+        //Frequency perosnality
+        FrequencyPersonality personality = new FrequencyPersonality();
+//        StringBuilder onemassiveString = new StringBuilder(501);
+        //Annotates and adds one page at a time...
+        Scanner scanner;
+        for (String page : pagesHtmlFree) {
+            scanner = new Scanner(page);
+            while (scanner.hasNextLine()) {
+                String currentLine = scanner.nextLine();
+                Annotation document = new Annotation(currentLine);
+                pipeline.annotate(document);
+                List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+                for (CoreMap sentence : sentences) {
+                    for (CoreLabel token : sentence.get(CoreAnnotations.TokensAnnotation.class)) {
+                        String lemma = token.lemma();
+                        personality.addWord(lemma);
+                    }
+                }
+            }
+        }
+
+
+        System.out.println(personality);
+    }
+
+    private class WebPageRetrievalThread extends Thread {
+        private String query;
+        private QueryCustomSearch daSearcher;
+        private List<Result> Results;
+
+        public WebPageRetrievalThread(String query, QueryCustomSearch searcher, List<Result> resultArrayList) {
+            this.query = query;
+            this.daSearcher = searcher;
+            this.Results = resultArrayList;
+        }
+
+        @Override
+        public void run() {
+            this.Results.addAll(daSearcher.getResultsFromQueryString(query));
+        }
+    }

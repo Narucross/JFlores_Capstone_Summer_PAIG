@@ -38,10 +38,10 @@ public class WebTests {
 //        getBetterToString();
 
 
-        //// Personality getResults
-        testWebSearchAndFrequencyPersonality();
+        //// Personality testGetFlowerResults
+//        testWebSearchAndFrequencyPersonality();
 //        testPersonality();
-
+//        testSpellChecker("potatoe");
     }
 
     public static String JSONLoveResultFromThesaurus = "{\"noun\":{\"syn\":[\"passion\",\"beloved\",\"dear\",\"dearest\",\"honey\",\"sexual love\",\"erotic love\",\"lovemaking\",\"making love\",\"love life\",\"concupiscence\",\"emotion\",\"eros\",\"loved one\",\"lover\",\"object\",\"physical attraction\",\"score\",\"sex\",\"sex activity\",\"sexual activity\",\"sexual desire\",\"sexual practice\"],\"ant\":[\"hate\"],\"usr\":[\"amour\"]},\"verb\":{\"syn\":[\"love\",\"enjoy\",\"roll in the hay\",\"make out\",\"make love\",\"sleep with\",\"get laid\",\"have sex\",\"know\",\"do it\",\"be intimate\",\"have intercourse\",\"have it away\",\"have it off\",\"screw\",\"jazz\",\"eff\",\"hump\",\"lie with\",\"bed\",\"have a go at it\",\"bang\",\"get it on\",\"bonk\",\"copulate\",\"couple\",\"like\",\"mate\",\"pair\"],\"ant\":[\"hate\"]}}";
@@ -88,7 +88,7 @@ public class WebTests {
     private static void testWebSearchAndFrequencyPersonality() {
         QueryCustomSearch doc = new QueryCustomSearch();
         System.out.println("Starting test now:\n\n");
-        List<Result> items = doc.getResults();
+        List<Result> items = doc.testGetFlowerResults();
         ArrayList<String> pagesHtmlFree = doc.getHtmlFreeFromResults(items);
         // Open first page on webBrowser
         System.out.println("Opening browser");
@@ -106,7 +106,7 @@ public class WebTests {
             Scanner scan = new Scanner(s);
             while (scan.hasNext()) {
                 String currentWord = scan.next();
-                currentWord= currentWord.replaceAll("\\W","");
+                currentWord = currentWord.replaceAll("\\W", "");
                 if (!(currentWord.equals("") || currentWord.equals(" "))) {
                     personality.addWord(currentWord);
                 }
