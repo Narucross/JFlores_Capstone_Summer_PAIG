@@ -1,5 +1,6 @@
 package Tests.AlgorithmicTests;
 
+import AITypes.Personalities.FrequencyPersonPackage.ComparisonObject;
 import AITypes.Personalities.FrequencyPersonPackage.FrequencyPersonality;
 import WebCrawlingResources.GoogleSearchImpl.QueryCustomSearch;
 import WebCrawlingResources.WebSurfing.BasicWebExtractor;
@@ -55,8 +56,10 @@ public class FrequencyComparatorTests {
      * this way we don't burn up my free quotes from google on repeated tests, also makes it faster to re_due tests
      */
     private void temp_MainMethodVersion2() throws IOException {
-        String query = "Polar bear dogs";
-        String linkToCompareTo = "http://polarbearconstruction.com/";
+//        String query = "Polar bear dogs";
+//        String linkToCompareTo = "http://polarbearconstruction.com/";
+        String query = "Flowers";
+        String linkToCompareTo = "http://www.aboutflowers.com/flower-a-plant-information-and-photos/meanings-of-flowers.html";
 
         FrequencyComparatorTests test = new FrequencyComparatorTests();
         ArrayList<String> webContent = test.getResultButLookForFile(query);
@@ -73,6 +76,11 @@ public class FrequencyComparatorTests {
 
         comparedGraph.addWordsToWeightedInstrument(comparedGraph, pageContent);
         print("Page Content added to the second frequency");
+
+
+        ComparisonObject object = FrequencyPersonality.compareFrequencies(bot, comparedGraph);
+        print("\n\n=====New Tests=====");
+        print(object.toString());
     }
 
     public static void print(String newLine) {
