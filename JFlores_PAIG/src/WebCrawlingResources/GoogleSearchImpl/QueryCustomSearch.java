@@ -24,8 +24,6 @@ import java.util.Scanner;
  */
 public class QueryCustomSearch extends BasicWebExtractor {
 
-    private final BasicWebExtractor basicWebExtractor = new BasicWebExtractor();
-
     /**
      * Create a request for the method "cse.list". This request holds the parameters needed by the the custom-search server.
      *
@@ -66,13 +64,18 @@ public class QueryCustomSearch extends BasicWebExtractor {
         ArrayList<String> builders = new ArrayList<>(items.size());
         for (Result result : items) {
             String currentResultsLink = result.getLink();
-            String pageContent = basicWebExtractor.getPageContentFromLink(currentResultsLink);
+            String pageContent = getHtmlFreeFromLink(currentResultsLink);
             if (!errorStringInHex.equals(pageContent)) {
                 builders.add(pageContent);
             }
         }
         return builders;
     }
+
+
+    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
+    //======= Test-Methods =======\\
+    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
 
     /**
      * A test method predecessor to "getHtmlFreeFromResults" method
@@ -85,8 +88,8 @@ public class QueryCustomSearch extends BasicWebExtractor {
                 URL url = new URL(currentResultsLink);
                 URLConnection con = url.openConnection();
                 InputStream in = con.getInputStream();
-                StringBuilder responceInString = basicWebExtractor.buildFromInputStream(in);
-                String pageHtmlFree = basicWebExtractor.htmlToText(responceInString.toString());
+                StringBuilder responceInString = buildFromInputStream(in);
+                String pageHtmlFree = htmlToText(responceInString.toString());
                 System.out.println("The Magic of the body:\n\n" + responceInString.toString() + "\n\n");
                 System.out.println("The Body without HTML\n\n" + pageHtmlFree + "\n\n");
                 System.out.println("\nPress enter for the next link:\n\n");
@@ -103,10 +106,6 @@ public class QueryCustomSearch extends BasicWebExtractor {
             e.printStackTrace();
         }
     }
-
-    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
-    //======= Test-Methods =======\\
-    ////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
 
     /**
      * Test method for the getResultsFromQueryString () above
