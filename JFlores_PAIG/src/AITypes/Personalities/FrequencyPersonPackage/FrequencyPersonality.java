@@ -3,6 +3,7 @@ package AITypes.Personalities.FrequencyPersonPackage;
 import AITypes.WeightedInstrument;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * This weighted instrument tries to tick up the likability of a word or antonym
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class FrequencyPersonality extends WeightedInstrument {
 
     private ArrayList<ArrayList<StringIntPairBinding>> Buckets;
+    private HashSet<String> stopWords;
 
     public FrequencyPersonality() {
         Buckets = new ArrayList<>((122 - 97));
@@ -22,6 +24,7 @@ public class FrequencyPersonality extends WeightedInstrument {
             Buckets.add(new ArrayList<StringIntPairBinding>());
         }
         Buckets.trimToSize();
+        stopWords = FrequencyHelper.getStopWords();
     }
 
     @Override
@@ -30,7 +33,7 @@ public class FrequencyPersonality extends WeightedInstrument {
     }
 
     public void addWord(String word) {
-        if (word.length() > 0) {
+        if (word.length() > 1 && !stopWords.contains(word.toLowerCase())) {
             char a = Character.toLowerCase(word.charAt(0));
             int index = getCharAsNum(a);
             if (index > -1 && index <= 25) {
