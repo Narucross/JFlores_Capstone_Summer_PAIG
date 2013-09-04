@@ -1,0 +1,62 @@
+//This should be moved to Comparison Object
+
+/**
+* Sorts the personalities bucket and returns the total number of entries in the bucket
+*/
+private int sortPersonality(FrequencyPersonality fr){
+	int size = 0;
+	for (ArrayList<StringIntPairBinding> binding : a1.Buckets) {
+		Collections.sort(binding);
+		size += binding.size();
+	}
+	return size;
+}
+
+public static ComparisonObject getCollisions( FrequencyPersonality a1, FrequencyPersonality a2 ) {
+	ComparisonObject object = new ComparisonObject( a1, a2 ); // Make comparison object reference both personalities
+	int size_a1 = sortPersonality( a1 );
+	int size_a2 = sortPersonality( a2 );
+	boolean a1IsBiggerArray = size_a1 >= size_a2;
+	int differenceInSizes = Math.max(size_a1, size_a2) - Math.min(size_a1, size_a2);
+	object.setSizeDifference(differenceInSizes);
+
+	ArrayList<StringIntPairBinding>[] biggerArray;
+	ArrayList<StringIntPairBinding>[] smallerArray;
+	
+	biggerArray = a1IsBiggerArray ? a1.Buckets : a2.Buckets;
+	smallerArray = a1IsBiggerArray ? a2.Buckets : a1.Buckets;
+	
+	for (int alphabet = 0; alphabet < biggerArray.length; alphabet++) {
+            for (StringIntPairBinding currentBinding : smallerArray[alphabet]) {
+                int indexOf = biggerArray[alphabet].indexOf(currentBinding);
+                if (indexOf != -1) {
+                    ComparisonElement element = new ComparisonElement();
+					element.setWordOf( currentBinding.getWordOf() );
+					if(a1IsBiggerArray){ // We want A1's entry first
+						element.setFrequencies( biggerArray[alphabet].get(indexOf) , currentBinding );
+					}else{
+						element.setFrequencies( currentBinding , biggerArray[alphabet].get(indexOf) );
+					}
+					object.addIntersection( element );
+                }
+            }
+        }
+	return object;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

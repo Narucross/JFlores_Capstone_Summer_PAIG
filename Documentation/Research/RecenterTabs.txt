@@ -1,0 +1,80 @@
+More recent:
+Group 1:
+	https://www.google.com/#gs_rn=22&gs_ri=psy-ab&gs_mss=Using%20apache%20O&tok=6onfcb0WdI-Sw7L6HYjjYw&pq=using%20apache%20open%20nlp&cp=15&gs_id=rm&xhr=t&q=Apache%20OpenNLP%20tutorial&es_nrs=true&pf=p&safe=off&sclient=psy-ab&oq=Apache+OpenNLP+&gs_l=&pbx=1&fp=1&biw=1920&bih=962&cad=b&bav=on.2,or.r_cp.r_qf.
+	http://amalgjose.wordpress.com/2013/05/09/simple-sentence-detector-using-opennlp/
+	http://kewi.unomaha.edu/resources/OpenNLPTutorial.pdf
+	http://www.programcreek.com/2012/05/opennlp-tutorial/
+	http://sourceforge.net/apps/mediawiki/opennlp/index.php?title=Parser
+	http://opennlp.apache.org/documentation/manual/opennlp.html
+	
+	
+Group 2:
+	http://mallet.cs.umass.edu/download.php
+	http://programminghistorian.org/lessons/topic-modeling-and-mallet
+	
+http://programminghistorian.org/lessons/topic-modeling-and-mallet
+
+Monday:
+
+http://www.sas.com/en_us/offers/sem/data-mining-2273479/register.html?gclid=CP3-jsHI1bgCFcU5QgodFTkA1w
+https://developers.google.com/appengine/docs/java/search/#Conceptual_Overview
+https://developers.google.com/search-appliance/
+http://stackoverflow.com/questions/13374088/google-search-in-java
+http://gsa-japi.sourceforge.net/gsa-japi.html
+http://csis.pace.edu/~bergin/Java/googlesearch.html
+https://www.google.com/search?q=Google+search+for+java
+
+WedNesDay:
+	https://developers.google.com/custom-search/v1/using_rest#key
+	https://developers.google.com/custom-search/v1/using_rest#WorkingResults
+https://developers.google.com/custom-search/v1/getting_started
+https://developers.google.com/custom-search/v1/overview
+http://stackoverflow.com/questions/3727662/how-can-you-search-google-programmatically-java-api
+http://csis.pace.edu/~bergin/Java/googlesearch.html
+
+
+Monday:
+http://code.google.com/p/google-api-java-client/wiki/APIs#CustomSearch_API
+https://developers.google.com/custom-search/v1/using_rest
+http://code.google.com/p/google-api-java-client/wiki/DeveloperGuide
+https://developers.google.com/custom-search/v1/libraries
+
+Tuesday:
+http://blog.lux-medien.com/2011/08/google-custom-search-java-implementation/
+https://developers.google.com/resources/api-libraries/documentation/customsearch/v1/java/latest/
+http://stackoverflow.com/questions/6917861/java-google-custom-search-api
+
+Aug 14th wednesday:
+http://www.comp.lancs.ac.uk/computing/research/stemming/general/
+http://stackoverflow.com/questions/9953619/technique-to-remove-common-wordsand-their-plural-versions-from-a-string
+http://www.slideshare.net/gagan1667/opennlp-demo
+http://opennlp.apache.org/documentation/1.5.3/manual/opennlp.html#tools.sentdetect
+
+//// ===================================================================================================================
+// Friday stuff
+//// ===================================================================================================================
+// ===============================================================================
+// Stream 1
+// ===============================================================================
+https://www.google.com/search?q=Apache+open+nlp&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a&channel=fflb#bav=on.2,or.r_cp.r_qf.&fp=48deb8ea0bf0dc48&q=java+stemming+library&rls=org.mozilla:en-US%3Aofficial&safe=off
+http://stackoverflow.com/questions/4444943/stemming-library-in-java
+http://snowball.tartarus.org/texts/introduction.html
+	http://tartarus.org/~martin/PorterStemmer/java.txt
+// ===============================================================================
+// Stream 2
+// ===============================================================================
+http://www.comp.lancs.ac.uk/computing/research/stemming/general/
+http://danielmclaren.com/2007/05/11/getting-started-with-opennlp-natural-language-processing
+http://grokbase.com/t/opennlp/dev/118j79sen0/stemmer
+http://stackoverflow.com/questions/8515281/nlp-for-java-which-toolkit-should-i-use
+	http://lucene.apache.org/core/index.html
+//// ===================================================================================================================
+
+
+Lexical Graphs:
+https://www.google.com/search?q=lexical+graphs.&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a&channel=rcs
+http://acl.ldc.upenn.edu/W/W06/W06-2205.pdf
+
+
+
+http://site.ebrary.com/lib/nulibraries/search.action?p00=Lexical+Graph&fromSearch=fromSearch&search=Search

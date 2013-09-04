@@ -1,0 +1,42 @@
+Separate semantic sentences,
+Tokenizing(finding the nouns, punctuation, ),
+chunking(reduced to syntactically related words)
+
+Maximum Entropy -- an approach to NLP
+
+Sentence dectection, tokenization, NER, POS Tagging ect.
+
+Apache OpenNLP and Mallet : Java
+OpenNLP
+	tekenization, sentence segmentation,
+		speech tagging and named entity extraction.
+
+
+Spyns.pdf : http://www.columbia.edu/itc/hs/medinfo/g6080/misc/articles/spyns.pdf
+6 steps for typical LSP-MLP processing chain:
+	1.) Syntactic prasing stage. 
+		a.) structures the sentences of a medical document.
+			Represents the dependencies by means of parse trees.
+			Can handle conjunctions.
+	2.) Semantic selection
+			Use occurrence patterns to imporve parsing trees by resolving cases of
+				Structural ambiguioty.
+				Semantic characterisaztion of parts of the parse tree is done on this level.
+	3.) Transformation stage. 	
+		Fills in gaps due to conjunction ellipses, reduces all sentence thypes to the
+			affirmative type, completes relative sentences and regroups verbal splits.
+	4.) Regularization stage.	
+		Transforms semantically augmented parse tree into a canonical tree
+			Consistenting of elementrary sentences that correspond to the basic 
+				sublanguage sentence types. 
+		The infected forms are replaced by their canonical form and the semantic host 
+			modifiers are identified.
+	5.) Information formatting stage
+		The formatting modules maps the words of the elementary sentences into the 
+			appropriate fields of a format tree and constructs a binary connective-
+			format tree for each sentence with the connectives as parent, and the
+			phrases on which it operates as left and right children.
+	6.) The normalization stage.
+		Recovers implicit knowledge when possible and maps the format trees into 
+			the relational database structures.
+	

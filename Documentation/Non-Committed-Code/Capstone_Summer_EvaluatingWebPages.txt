@@ -1,0 +1,58 @@
+How to map a webpage:
+We can already pull out the contents of a webpage
+////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
+//======= Sections: First one takes a website and returns an HTML-free webpage =======\\
+//======= Sections: Second are 3 different methods for adding large volumes of text to a personality =======\\
+////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
+
+	public static final String errorStringInHex = "617320692077616c6b207468726f756768207468652076616c6c6579206f662074686520736861646f77206f66206465617468";
+    public String getHtmlFreeResponceFromLink(String link) {
+		String returnedString = null;
+		try {
+			URL url = new URL(link);
+			URLConnection con = url.openConnection();
+			InputStream in = con.getInputStream();
+			StringBuilder page = buildFromInputStream(in);
+			returnedString = htmlToText(page.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        return (returnedString != null) ? returnedString : errorStringInHex;
+    }
+	
+	// Now we have a connection to a webpage
+	//// Mapping time
+	// Try another frequency,except that it counts the true number of times a word happens
+	//// Need a benign way to compare frequencies 
+	
+	
+	// ===========================================================================================
+	// Add methods to personality : queryCustomSearch
+	// ===========================================================================================
+    public void addWordsToWeightedInstrument(WeightedInstrument wInstrument, String sentence){
+        Scanner scan = new Scanner(sentence);
+        while( scan.hasNext() ){
+            String currentWord = scan.next();
+            currentWord = currentWord.replaceAll("\\W","");
+            if( ! ( "".equals( currentWord ) || " ".equals( currentWord ) ) )
+            {
+                wInstrument.WeightFunction(currentWord);
+            }
+        }
+    }
+
+    public void addWordsToWeightedInstrument(WeightedInstrument wInstrument, String[] sentences){
+        addWordsToWeightedInstrument( wInstrument, Arrays.asList(sentences) );
+    }
+
+    public void addWordsToWeightedInstrument(WeightedInstrument wInstrument, Iterable<String> sentences){
+        for(String sent : sentences){
+            addWordsToWeightedInstrument( wInstrument, sent );
+        }
+    }
+	
+	
+////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\
+//======= Sections: How to map a website, using Section 1 I get html free pages =======\\
+//======= Sections:  =======\\
+////////////////// ==================================================================================================== \\\\\\\\\\\\\\\\\\

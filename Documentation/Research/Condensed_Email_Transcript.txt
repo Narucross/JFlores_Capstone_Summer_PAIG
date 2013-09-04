@@ -1,0 +1,22 @@
+Ryan:
+1) Learn graphs they are you friend
+
+2) Teach the creature about nouns and verbs, and that nouns can be either subjects or objects.
+
+3) Then, given some source of text, categorize subjects, verbs, and objects
+
+4) Take those nodes and establish relationships. That's where the graph comes in.
+
+5) Trees are like graphs, but more constrained.
+
+6) Then, given a sentence, the creature can permutate possible responses of the graph
+
+Brandon:
+Thats is a Start but you need rules for the grammers so how to build sentences and the 
+	sfirst part is all the same the defining that will be the first step
+
+And for most ways you need a good table of well defined words and relations but allowing the machine to build that would be the smarter way
+
+You need to look up node trees which will help with the relations and stff
+
+First understand what's going and auto knowledge building then you can start figuring the way of responding

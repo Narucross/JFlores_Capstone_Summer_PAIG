@@ -1,0 +1,34 @@
+Hey can I ask for help? Not code, because it is all theoretical
+and the internet does not describe, how to think about AI, implementation paradigms,
+that is the kind of thing I am interested in and the internet is not delivering.
+
+See I have been trying to create an Artificial intelligence, that the user can chat with.
+The only niche is that the AI is suppose to get smarter over time.
+Smarter in that it remembers more vocabulary over time. 
+But this is literally the only line of code I could find that remotely describes
+what this would look like: objectOf("ball","blue")
+which basically says we have encountered a ball that is blue.
+Do you have any ideas we could talk about? 
+Thanks for your time,
+from 
+Joshua F.
+
+Hey long time no see,
+I sent this because frankly I need help.
+See I have been trying to implement an Artificial intelligence basically a chat
+bot that is suppose to get smarter over time. But the internet has not been my 
+friend. It has been more content with just repeating the definition of an AI,
+without mentioning design paradigms or what to think about if someone wanted
+to implement an AI. 
+Which I guess is the point cause they have job security that way, but it makes
+it really frustrating to re-read the same thing over and over again.
+Is there any way you can help me with this? I am truly at a lost on where to 
+begin or what to design.
+So far I have tried libraries like Apache Open NLP, and stanford NLP, 
+because I thought: "Well probably the first place to start would be to read sentences,
+and gather a way to organise that data." 
+
+But I have just about given up trying to find a use for their API's.
+
+Thanks for your time.
+From Joshua F.

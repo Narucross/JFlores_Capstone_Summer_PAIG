@@ -1,0 +1,135 @@
+///////////////////////////////////////////
+///////////////////////////////////////////
+//Ryan's transcripts
+///////////////////////////////////////////
+///////////////////////////////////////////
+Conversation started Friday
+2:19pm
+Joshua Flores
+
+Hey long time no see, I sent this because frankly I need help. See I have been trying to implement an Artificial intelligence basically a chat bot that is supposed to get smarter over time. But the internet has not been my friend. It has been more content with just repeating the definition of an AI, without mentioning design paradigms or what to think about if someone wanted to implement an AI. Which I guess is the point cause they have job security that way, but it makes it really frustrating to re-read the same thing over and over again. Is there any way you can help me with this? I am truly at a lost on where to begin or what to design. So far I have tried libraries like Apache Open NLP, and stanford NLP, because I thought: "Well probably the first place to start would be to read sentences, and gather a way to organize that data."
+
+But I have just about given up trying to find a use for their API's, because even with these API’s I don’t know what to do with the sentences after they are run through the APIs.
+
+Thanks for your time. From Joshua F.
+2:35pm
+Ryan Iley
+
+Graphs are your friend if you want your bot to seem to understand language.
+2:36pm
+Joshua Flores
+
+Like tree nodes?
+2:36pm
+Ryan Iley
+
+Teach the creature about nouns and verbs, and that nouns can be either subjects or objects.
+
+Then, given some source of text, categorize subjects, verbs, and objects
+
+Take those nodes and establish relationships. That's where the graph comes in.
+
+Trees are like graphs, but more constrained.
+
+Then, given a sentence, the creature can permutate possible responses of the graph
+2:42pm
+Joshua Flores
+
+Wow thanks man, That... that is alot better then anything out there. I am trying to think of what to say but I can't...think of anything
+2:51pm
+Joshua Flores
+
+One Idea I was discussing with Brandon was the idea of having the AI, build its own grammar (like from computational theory), where it would essentially follow a map (that is how I understood a grammar, as roadway of appropriate input), and then pull out what it would need to fulfill that map
+3:27pm
+Ryan Iley
+
+Exactly. I would use the graph to build the grammar. That's what I meant by "categorize"
+3:30pm
+Joshua Flores
+
+Hmm we may have a difference because in my mind the grammar and the graphs are different things, The grammar is how the AI understands sentences or output should be formatted and the graphs are like a storage and retrieval But I admit they do sounds pretty much the same
+3:32pm
+Ryan Iley
+
+You need to learn how to merge them. Not many people understand lexical graphs.
+3:38pm
+Joshua Flores
+
+Sure thing, and thanks man, this has been a lot more helpful then the past couple of days searching websites
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+//Brandon's transcripts
+///////////////////////////////////////////
+///////////////////////////////////////////
+
+Hmm let me look around but how do you want to do it complex easy word tables or learning method question answer need more info
+2:25pm
+Joshua Flores
+
+I think learning method, How would you do research for this?
+2:26pm
+Brandon Jacob Dvorak
+
+Well learning is newer so it will be harder you first need a way of taking and defining what the person is ask or 
+saying like how what when where how many or is it a statement and then how to catalog the statement
+
+You will also need to define subject and verbs and nouns
+
+Understanding so far ??
+2:28pm
+Joshua Flores
+
+Yeah,
+
+So machine learning is newer so there is less documentation about it?
+2:29pm
+Brandon Jacob Dvorak
+
+I think defining is they easy part and yeah
+
+Figuring what to say will be harder
+
+You will need a storage of ways to response moods and appropriateness
+
+The whole ai field is newer so yeah and the understanding of this fields is complex as all hell
+2:32pm
+Joshua Flores
+
+Well is it complex or is it that nobody has an implementation for it?
+2:33pm
+Brandon Jacob Dvorak
+
+There are implementations like clevorbot is Sortive one but overall complex way hard
+2:34pm
+Joshua Flores
+
+Ok what I am thinking is something like those grammers from computer theory class
+
+Like if there was some way for the machine to create its own grammer, it essentially has its own way to speak
+2:36pm
+Brandon Jacob Dvorak
+
+Thats is a Start but you need rules for the grammers so how to build sentences and the first part is all the same the defining that will be the first step
+
+And for most ways you need a good table of well defined words and relations but allowing the machine to build that would be the smarter way
+
+You need to look up node trees which will help with the relations and stff
+
+Like in algo
+2:40pm
+Joshua Flores
+
+*writing this down*
+2:40pm
+Brandon Jacob Dvorak
+
+Haha alright its cool I'm just thinking of the ways
+2:49pm
+Joshua Flores
+
+Ok so have the AI, build its own knowledge table(s), with relationships,
+2:55pm
+Brandon Jacob Dvorak
+
+First understand what's going and auto knowledge building then you can start figuring the way of responding

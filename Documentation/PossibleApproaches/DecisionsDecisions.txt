@@ -1,0 +1,57 @@
+PRO390	Capstone Project	 	0.0	0.0	 	Jul 08	Sep 17	Mon-Fri	3:00pm	4:50pm	
+Need 1.5 or 2 credits more:
+Available :: 3
+Look for two  1.5 credits : 1 for capstone, 1 for final quater
+choices:
+HUM305 Ethics  (3 credits) Section 1 : MTWHF: 8:30am - 9:50 am Parson ELVerified
+		Students will examine the concept of ethics and the basic principles
+		underlying ethical practice. Students will explore research and literature
+		on ethics and relate this information to decision-making in
+		professional and civic arenas. 
+HUM321 Technical Writing (3 credits) Section ? : MTWH: 5:30 pm - 6:20pm Parker
+		This course applies the skills and knowledge of writing gained in
+		Intermediate English Composition to technical writing genres.
+		Particular emphasis will be given to genres used in the Computer
+		Science field such documentation, requirements documents, needs
+		analysis, and feasibility studies. Critical thinking and problem solving
+		will be a part of the criteria for good analysis and writing in course
+		assignments.
+		Prerequisites: HUM121 English Composition
+MTM160 	Graphic Design Tools  (3 credits) Section 1 : M-F : 1:00pm - 2:20 pm Burningham ELVerified
+		An introduction to the Adobe Creative Suite graphic design applications:
+		Photoshop, Illustrator, Fireworks, Flash, After Effects, in-
+		Design, and other similar programs. Students will get their feet wet
+		by designing projects such as website mockups, photo illustrations,
+		Bezier drawings, and printed materials.
+		Requires: Adobe Creative Suite Software (or lab)
+MTM230 	Digital Art and Music I (3 credits) 
+		Section A1 M-F 7:00 am - 8:20 am Bown
+		Section B1 M-F 8:30 am - 9:50 am Bown
+	This course focuses on sound and level design for digital applications.
+		Students will learn the basics of sound recording, editing and
+		audio library management. Students will also work on sound effects
+		for in-project cut scenes, and actor dialogue. Students also learn the
+		basics of interactive level design. Levels will be conceived, designed
+		and built to a non-textured “white box” stage. Focus will be on design
+		that provides engaging and immersive game play. Students will also
+		learn how to affect level design that contributes to the overall style
+		and theme of project.
+MTM450 	Web Game Design  (3 credits) Section 1 : M-F 8:00 am - 9:20 am King
+		This course provides an introduction to basic web game design principles
+		and in-browser gaming experiences. Students will design, animate,
+		and develop typical online games.
+SSC320 Group Dynamics (3 credits) Section 2 : M-F 10:00 am - 11:20 am Allison ELVerified
+		This course provides a comprehensive examination of the forces that
+		drive the formation and activities of groups. Students will have an opportunity
+		to investigate in-depth the principles and concepts related
+		to group structure and lifecycle, influence and power, constructive
+		conflict, productivity, decision-making, leadership, intergroup relations,
+		and large group behavior. Students will learn best practices for
+		participating in and leading groups.
+		Prerequisites: FAC125 Collaborative and Interpersonal Communications I
+
+SSC350 Intellectual Property (3 credits) Section 2 : M-F 6:00pm-7:20pm Cunningham ELVerified
+		This course provides an overview of the intellectual property laws
+		of the United States. The purpose of the course is to give students
+		an understanding of copyright, patent, trademark, and trade secret
+		law, and how those laws fit into their vocational field.

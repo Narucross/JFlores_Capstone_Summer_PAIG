@@ -1,0 +1,68 @@
+Recent tabs
+http://lifehacker.com/5983680/how-the-heck-do-i-use-github
+
+http://www.lockergnome.com/web/2011/12/13/how-to-use-github-to-contribute-to-open-source-projects/
+http://www.xtremevbtalk.com/showthread.php?t=192385
+http://www.ai-blog.net/archives/000178.html
+http://en.wikipedia.org/wiki/Memory
+http://plato.stanford.edu/entries/memory/
+
+http://www.leedberg.com/2006/01/future-of-billy-and-daisy.html
+http://www.leedberg.com/glsoft/daisy/history.shtml
+
+http://www.ai-forum.org/topic.asp?forum_id=15&topic_id=16445&page=1
+http://web.media.mit.edu/~minsky/papers/steps.html
+
+http://blog.opencog.org/2009/09/08/sentence-patterns/
+
+Open source:
+http://opennlp.apache.org/
+http://mallet.cs.umass.edu/
+
+Microsoft research?
+http://research.microsoft.com/en-us/groups/nlp/
+
+How to create your own natural language process
+https://www.google.com/search?safe=off&sclient=psy-ab&q=How+to+create+your+own+natural+language+process&oq=How+to+create+your+own+natural+language+process&gs_l=hp.3..33i21.16526659.16543749.2.16544230.59.39.5.14.17.0.294.4809.3j30j3.36.0....0...1c.1.19.psy-ab.y3_he2cTOLw&pbx=1&bav=on.2,or.r_cp.r_qf.&bvm=bv.48705608,d.cGE&biw=946&bih=932&ech=1&psi=30XkUZucFYLQiwLggYG4CQ.1373914561234.4&emsg=NCSR&noj=1&ei=40XkUY7RHqSCjAKfsoHgCw
+
+
+NLP and medical: 4:
+http://www.columbia.edu/itc/hs/medinfo/g6080/misc/articles/spyns.pdf
+
+Scholar NLP
+http://scholar.google.com/scholar?q=Learning+how+to+program+natural+language+processing&btnG=&hl=en&as_sdt=0%2C45&as_vis=1
+
+//Wednesday 16
+More open sources
+https://www.google.com/#sclient=psy-ab&q=nlp+open+source+java&oq=NLP+opensource&gs_l=hp.3.1.0i10l2j0i22i10i30.849.2933.0.4002.14.13.0.0.0.0.387.1716.8j3j1j1.13.0....0...1c.1.21.psy-ab.HO-b2iHMHzM&pbx=1&bav=on.2,or.r_qf.&bvm=bv.49478099,d.cGE&fp=e1253674041c3a8c&biw=1920&bih=962
+
+Stanford
+http://nlp.stanford.edu/software/
+http://opennlp.sourceforge.net/projects.html
+
+Max entropy
+https://en.wikipedia.org/wiki/Principle_of_maximum_entropy
+http://repository.upenn.edu/cgi/viewcontent.cgi?article=1083&context=ircs_reports
+http://homepages.inf.ed.ac.uk/lzhang10/maxent.html
+http://www.ling.helsinki.fi/kit/2008s/clt350/docs/Ratnaparkhi-PhD.pdf
+
+https://www.google.com/#gs_rn=21&gs_ri=psy-ab&gs_mss=How%20to%20progra%20Machine%20learning&pq=how%20machine%20learning&cp=5&gs_id=ps&xhr=t&q=how+to+learn+machine+learning&es_nrs=true&pf=p&sclient=psy-ab&oq=How++Machine+learning&gs_l=&pbx=1&bav=on.2,or.r_qf.&bvm=bv.49478099,d.cGE&fp=e1253674041c3a8c&biw=1920&bih=962
+
+Books to try:
+http://www.quora.com/Machine-Learning/How-can-you-learn-Mathematics-for-machine-learning
+
+
+http://www.computerhope.com/issues/ch000549.htm
+http://mallet.cs.umass.edu/download.php
+http://mallet.cs.umass.edu/mallet-tutorial.pdf
+http://billburr.com/podcast/monday-morning-podcast-7-22-13
+http://www.youtube.com/watch?v=lhoYLp8CtXI
+
+
+To pull "Topics" from texts:
+http://programminghistorian.org/lessons/topic-modeling-and-mallet
+
+
+Responce and HTML Parsing:
+	http://stackoverflow.com/questions/240546/removing-html-from-a-java-string
+	http://stackoverflow.com/questions/5769717/how-can-i-get-an-http-response-body-as-a-string-in-java

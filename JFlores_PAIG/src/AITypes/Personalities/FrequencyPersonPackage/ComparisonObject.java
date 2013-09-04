@@ -23,6 +23,9 @@ public class ComparisonObject {
         return intersections.add(binding);
     }
 
+    /**
+     * Shows which words are found in both frequencies
+     */
     public String showCollisions() {
         StringBuilder builder = new StringBuilder();
         builder.append("Collisions occurred { \n");

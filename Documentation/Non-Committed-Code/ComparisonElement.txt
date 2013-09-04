@@ -1,0 +1,47 @@
+// ========================= \\
+// This is frequency enhancements \\
+// Keeping better track of stuff \\
+// ========================= \\
+// For comparison object he will now use a different array of objects
+// That stores a reference to both objects where he was created
+
+public class ComparisonElement? extends StringIntPairBinding{
+	protected int secondPagesOccurenceOfWord = 1;
+	
+	///Region constructors
+	public ComparisonElement(){		super();	}	
+	
+	public ComparisonElement(String wordOf, int firstPagesWordFrequency, int secondPagesWordFrequency){
+		super(wordOf, firstPagesWordFrequency);
+		setPageTwoFrequency(secondPagesWordFrequency);
+	}
+	///endRegion
+	
+	public void setFrequencies(StringIntPairBinding a1, StringIntPairBinding a2 ){
+		setPageOneFrequency( a1.getOccurrence() );
+		setPageTwoFrequency( a2.getOccurrence() );
+	}
+	
+	/** 
+	* a convience method to set the first frequency
+	*/
+	public void setPageOneFrequency(int frequency_1){this.setOccurrence(frequency_1);}
+	public void setPageTwoFrequency(int frequency_2){this.secondPagesOccurenceOfWord = frequency_2; }
+	private int pageOneFrequency(){	return getOccurrence();}
+	private int pageTwoFrequency(){ return this.secondPagesOccurenceOfWord;}
+	public int differenceInFrequency(){
+		int x1 = pageOneFrequency();
+		int x2 = pageTwoFrequency();
+		return Math.max( x1, x2 ) - Math.min( x1, x2 );
+	}
+	
+	public int getFrequency(boolean firstPage){
+		return firstPage ? pageOneFrequency() : pageTwoFrequency();
+	}
+	
+	    @Override
+    public String toString() {
+        return String.format("ComElement{ word = '%s', freq_1 = '%s', freq_2 = '%s', diff = '%s' }",
+			wordOf, pageOneFrequency(), pageTwoFrequency(), differenceInFrequency());
+    }
+}

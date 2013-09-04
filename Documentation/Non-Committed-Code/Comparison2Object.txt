@@ -1,0 +1,10 @@
+/**
+* The point of this class is to get 
+*/
+public class ComparisonObject2{
+	ComparisonObject Collisions;
+	// highlight differences
+	ComparisonObject NotInTestData;
+	ComparisonObject TestDataSlows;
+	
+}

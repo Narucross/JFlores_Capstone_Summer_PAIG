@@ -1,0 +1,21 @@
+Personalities are quintessentially:
+An Algorithm with specific data
+
+The original personality used an algorithm to store and supply key moments in the active frames of the
+application. Using this algorithm would make the personality responcive and commited to the context of the situation.
+
+Now a personality is simply the manipulation of the data, in this case key and similar words
+
+A frequency Personality ticks everytime a word is present. I would want to disqualify say adjectives
+	because they are intrisically meaningless
+
+<Word,value> 
+on addWord(word)
+find(word) !=null
+	incrementWord(wordLocation);
+else
+	addWord(word,1);
+	
+	
+List of buckets
+sorted by the first letter [all lowercase]

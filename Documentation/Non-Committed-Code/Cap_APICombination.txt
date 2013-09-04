@@ -1,0 +1,57 @@
+// =====================|.|.|=====================\\
+//.. Combining web APIs
+// =====================|.|.|=====================\\
+
+public String errorString = "492063616e20676f207468652064697374616e63652e"; /* I can go the distance.*/
+
+/**
+* This is suppose to return a proper query?
+* We need a proper way to make it so that all prompt user is streamed and replaceable
+* returns to google
+**/
+public String registeredQuery(String originalAttempt){
+	String correctValue = errorString;
+	SpellCheckRestService spellCheck = new SpellCheckRestService();
+	String[] suggestions = spellCheck.isWordCorrectIfNotReturnSuggestions(originalAttempt);
+	if( suggestions.length <= 0 ){
+		correctValue = originalAttempt;
+	}else{
+		correctValue = definingMechanism.askUser(suggestions);
+	}
+	
+	// Convert String into google beauty && thesaurous pass through, return to google
+	//Define what you want from the thesaurus and add it to google beauty
+	String conserve = correctValue;
+	correctValue = getThesauriedQuery(correctValue);
+	
+	return correctValue;
+}
+
+public String getThesauriedQuery(String originalAttemptCorrected) {//can throw null pointer
+	BigThesQuery thesQuery = new BigThesQuery();
+	BigThesaurusJSonResult results = thesQuery.getWordJsonResult(originalAttemptCorrected);
+	//For every noun and verb in results 
+		// Inception for every syn,ant,usr,sim,rel in those we need to do something appropriate
+	return prettyString;
+}
+
+
+
+//===Things I can already do:
+combine api
+include negative words, adjust weights for api intake
+Keep the original sources
+
+During comparision remove words that appear to often in to many places
+
+
+// ======== // ======== // ======== // ======== // ======== // ======== // ======== // ========
+// Balls in your court
+// ======== // ======== // ======== // ======== // ======== // ======== // ======== // ========
+// We have a huge load of sample data
+// What patterns can we differ for
+// 
+// Identify what makes pages unique, 
+// Ask me questions when I get stuck.
+// ======== // ======== // ======== // ======== // ======== // ======== // ======== // ======== 
+// ======== // ======== // ======== // ======== // ======== // ======== // ======== // ========

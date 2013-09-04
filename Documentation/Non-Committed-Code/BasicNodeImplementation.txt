@@ -1,0 +1,20 @@
+Tree node graph where the tree is the grammer,
+	and the nodes can be either variants or a sequence of responces
+		public class JTreeNode{
+			JTreeNode parent;
+			List<JTreeNode> children;
+		}
+		
+The whole point of the graph, is that we could map a relationship,
+	in other words actual memory
+		public class GenTreeNode{
+			List<GenTreeNode> nodes;
+			GenTreeNode parent;
+			String value;
+		}
+		
+The{
+	Rain{in{spain},fell,showered}
+	Brothers{Grim, Blues}
+	Anime{Guilty_Crown{is{under_rated}}, Sekae, mirai_nikki}	
+}

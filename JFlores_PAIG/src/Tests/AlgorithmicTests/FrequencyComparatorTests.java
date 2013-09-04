@@ -20,8 +20,19 @@ public class FrequencyComparatorTests {
 
     public static void main(String[] args) throws IOException {
 
-        FrequencyComparatorTests test = new FrequencyComparatorTests();
-        test.temp_MainMethodVersion2();
+//        FrequencyComparatorTests test = new FrequencyComparatorTests();
+//        test.temp_MainMethodVersion2();
+//        ArrayList<String> bakaString = new ArrayList<>(1);
+//        String[] bakaToTest = bakaString.toArray(new String[bakaString.size()]);
+//        print("" + bakaToTest.length);
+//        for (String s : bakaToTest) {
+//            print(s);
+//        }
+//        bakaToTest.toString();
+        String testWord = "aren't";
+        print(testWord);
+        testWord = testWord.replaceAll("\\W", "");
+        print(testWord);
 
     }
 

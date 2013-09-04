@@ -7,8 +7,8 @@ package AITypes.Personalities.FrequencyPersonPackage;
  * Time: 3:56 PM
  */
 public class StringIntPairBinding implements Comparable<StringIntPairBinding> {
-    private String wordOf;
-    private int occurrence = 1;
+    protected String wordOf;
+    protected int occurrence = 1;
 
     public StringIntPairBinding() {
         wordOf = "";

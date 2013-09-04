@@ -1,0 +1,48 @@
+Reader:
+	text reader
+Synonym reasource
+	This way I can pratically devote a whole project to just data-mining,
+	Lets make this a combination of Nini and Daisy
+
+Gather templates for sentence structure
+	Find things on the internet using data mining, and aquire those templates
+	Have an external resource that makes it easy to find valid words or 
+		congigations
+
+I just need to know what I am gonna accomplish by next week
+		What to expect at the next checkpoint
+	
+A personality is defined by the unique approach to situations and knowledge
+	in the robots case this can be simulated by peculiararities in grammer.
+	Traits:
+		Approach to problem
+		Peculiarities in grammer
+		Levels of empathy or something else...
+	
+Those are the two things I need to simulate or enable:
+	Peculiar approach to problems
+	Peculiar entries in grammer
+	
+What are things I need done in two weeks with these goals in mind?
+	Text-reader
+	-- Template matcher
+		// Pattern algorithm that detects the sentence structure of sentences
+	-- Store deciphered templates
+		// Which to keep, what are placeholders
+	-- Synonym web app
+		// Connect to some library and look up words
+		// Print to console
+	Week 2:
+		Original: UI, show number of personalities, "new"&"Add"&"Select" features, basic responce unit
+		PAIG core systems unit{
+			Selection Enum commands: {New P, Select}
+				Select{Edit, getPsychProfile, AddWords, Search, Chat, }
+					Search{Websites, internal}
+		}
+		
+		
+		Center for data science NYU
+Future of human institue oxford
+Department of psychology NYU
+
+Principals of computational intelligence
